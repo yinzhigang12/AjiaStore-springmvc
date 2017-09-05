@@ -1,52 +1,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
     <title>商品搜索页面</title>
-    <link rel="stylesheet" href="../css/header.css"/>
-    <link rel="stylesheet" href="../css/search.css"/>
-    <link rel="stylesheet" href="../css/footer.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/search.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css"/>
 </head>
 <!-- 页面顶部-->
-<header id="top">
-    <div id="logo" class="lf">
-        <img class="animated jello" src="../images/header/logo.png" alt="logo"/>
-    </div>
-    <div id="top_input" class="lf">
-        <input id="input" type="text" placeholder="请输入您要搜索的内容"/>
-        <div class="seek" tabindex="-1">
-            <div class="actived"><span>分类搜索</span> <img src="../images/header/header_normal.png" alt=""/></div>
-            <div class="seek_content">
-                <div id="shcy">生活餐饮</div>
-                <div id="xxyp">学习用品</div>
-                <div id="srdz">私人订制</div>
-            </div>
-        </div>
-        <a href="" class="rt"><img id="search" src="../images/header/search.png" alt="搜索"/></a>
-    </div>
-    <div class="rt">
-        <ul class="lf">
-            <li><a href="myCollect.html" title="我的收藏"><img class="care" src="../images/header/care.png"
-                                                           alt=""/></a><b>|</b></li>
-            <li><a href="myOrder.html" title="我的订单"><img class="order" src="../images/header/order.png"
-                                                         alt=""/></a><b>|</b></li>
-            <li><a href="cart.html" title="我的购物车"><img class="shopcar" src="../images/header/shop_car.png"
-                                                       alt=""/></a><b>|</b></li>
-            <li><a href="lookforward.html">帮助</a><b>|</b></li>
-            <li><a href="login.html">登录</a></li>
-        </ul>
-    </div>
-</header>
-<!-- nav主导航-->
-<nav id="nav">
-    <ul>
-        <li><a href="index.html">首页</a></li>
-        <li><a href="item_food.html">生活餐饮</a></li>
-        <li><a href="itemCat.html">学习用品</a></li>
-        <li><a href="lookforward.html">私人定制</a></li>
-    </ul>
-</nav>
+<jsp:include page="commons/header.jsp"></jsp:include>
 <body>
 <div class="big">
     <form name="" action="" method="post">
@@ -55,12 +19,15 @@
             <div id="content_box">
                 <div class="lf" id="d1">
                     <div class="img">
-                        <img src="../images/search/product_img.png" alt="" onclick="toItemInfo(${item.id})"/>
+                        <img src="${pageContext.request.contextPath}/images/search/product_img.png" alt=""
+                             onclick="toItemInfo(${item.id})"/>
                     </div>
                     <div class="describe">
                         <p onclick="toItemInfo(${item.id})">联想(Lenovo) YOGA900 (YOGA4 PRO)多彩版</p>
                         <span class="price"><b>￥</b><span class="priceContent">4399.00</span></span>
-                        <span class="addCart"><img id="collect" src="../images/search/care.png" alt=""/><a
+                        <span class="addCart"><img id="collect"
+                                                   src="${pageContext.request.contextPath}/images/search/care.png"
+                                                   alt=""/><a
                                 href="javascript:void(0);" class="add_cart">加入购物车</a></span>
                         <!--<span class="succee" style="display: none">
                             <img src="/images/search/product_true.png" alt="" />
@@ -70,12 +37,15 @@
                 </div>
                 <div class="lf" id="d1">
                     <div class="img">
-                        <img src="../images/search/product_img1.png" alt="" onclick="toItemInfo(${item.id})"/>
+                        <img src="${pageContext.request.contextPath}/images/search/product_img1.png" alt=""
+                             onclick="toItemInfo(${item.id})"/>
                     </div>
                     <div class="describe">
                         <p onclick="toItemInfo(${item.id})">联想(Lenovo) YOGA900 (YOGA4 PRO)多彩版</p>
                         <span class="price"><b>￥</b><span class="priceContent">4399.00</span></span>
-                        <span class="addCart"><img id="collect" src="../images/search/care.png" alt=""/><a
+                        <span class="addCart"><img id="collect"
+                                                   src="${pageContext.request.contextPath}/images/search/care.png"
+                                                   alt=""/><a
                                 href="javascript:void(0);" class="add_cart">加入购物车</a></span>
                         <!--<span class="succee" style="display: none">
                             <img src="/images/search/product_true.png" alt="" />
@@ -85,12 +55,15 @@
                 </div>
                 <div class="lf" id="d1">
                     <div class="img">
-                        <img src="../images/search/product_img2.png" alt="" onclick="toItemInfo(${item.id})"/>
+                        <img src="${pageContext.request.contextPath}/images/search/product_img2.png" alt=""
+                             onclick="toItemInfo(${item.id})"/>
                     </div>
                     <div class="describe">
                         <p onclick="toItemInfo(${item.id})">联想(Lenovo) YOGA900 (YOGA4 PRO)多彩版</p>
                         <span class="price"><b>￥</b><span class="priceContent">4399.00</span></span>
-                        <span class="addCart"><img id="collect" src="../images/search/care.png" alt=""/><a
+                        <span class="addCart"><img id="collect"
+                                                   src="${pageContext.request.contextPath}/images/search/care.png"
+                                                   alt=""/><a
                                 href="javascript:void(0);" class="add_cart">加入购物车</a></span>
                         <!--<span class="succee" style="display: none">
                             <img src="/images/search/product_true.png" alt="" />
@@ -100,12 +73,15 @@
                 </div>
                 <div class="lf" id="d1">
                     <div class="img">
-                        <img src="../images/search/product_img3.png" alt="" onclick="toItemInfo(${item.id})"/>
+                        <img src="${pageContext.request.contextPath}/images/search/product_img3.png" alt=""
+                             onclick="toItemInfo(${item.id})"/>
                     </div>
                     <div class="describe">
                         <p onclick="toItemInfo(${item.id})">联想(Lenovo) YOGA900 (YOGA4 PRO)多彩版</p>
                         <span class="price"><b>￥</b><span class="priceContent">4399.00</span></span>
-                        <span class="addCart"><img id="collect" src="../images/search/care.png" alt=""/><a
+                        <span class="addCart"><img id="collect"
+                                                   src="${pageContext.request.contextPath}/images/search/care.png"
+                                                   alt=""/><a
                                 href="javascript:void(0);" class="add_cart">加入购物车</a></span>
                         <!--<span class="succee" style="display: none">
                             <img src="/images/search/product_true.png" alt="" />
@@ -115,12 +91,15 @@
                 </div>
                 <div class="lf" id="d1">
                     <div class="img">
-                        <img src="../images/search/product_img4.png" alt="" onclick="toItemInfo(${item.id})"/>
+                        <img src="${pageContext.request.contextPath}/images/search/product_img4.png" alt=""
+                             onclick="toItemInfo(${item.id})"/>
                     </div>
                     <div class="describe">
                         <p onclick="toItemInfo(${item.id})">联想(Lenovo) YOGA900 (YOGA4 PRO)多彩版</p>
                         <span class="price"><b>￥</b><span class="priceContent">4399.00</span></span>
-                        <span class="addCart"><img id="collect" src="../images/search/care.png" alt=""/><a
+                        <span class="addCart"><img id="collect"
+                                                   src="${pageContext.request.contextPath}/images/search/care.png"
+                                                   alt=""/><a
                                 href="javascript:void(0);" class="add_cart">加入购物车</a></span>
                         <!--<span class="succee" style="display: none">
                             <img src="/images/search/product_true.png" alt="" />
@@ -130,12 +109,15 @@
                 </div>
                 <div class="lf" id="d1">
                     <div class="img">
-                        <img src="../images/search/product_img5.png" alt="" onclick="toItemInfo(${item.id})"/>
+                        <img src="${pageContext.request.contextPath}/images/search/product_img5.png" alt=""
+                             onclick="toItemInfo(${item.id})"/>
                     </div>
                     <div class="describe">
                         <p onclick="toItemInfo(${item.id})">联想(Lenovo) YOGA900 (YOGA4 PRO)多彩版</p>
                         <span class="price"><b>￥</b><span class="priceContent">4399.00</span></span>
-                        <span class="addCart"><img id="collect" src="../images/search/care.png" alt=""/><a
+                        <span class="addCart"><img id="collect"
+                                                   src="${pageContext.request.contextPath}/images/search/care.png"
+                                                   alt=""/><a
                                 href="javascript:void(0);" class="add_cart">加入购物车</a></span>
                         <!--<span class="succee" style="display: none">
                             <img src="/images/search/product_true.png" alt="" />
@@ -145,12 +127,15 @@
                 </div>
                 <div class="lf" id="d1">
                     <div class="img">
-                        <img src="../images/search/product_img6.png" alt="" onclick="toItemInfo(${item.id})"/>
+                        <img src="${pageContext.request.contextPath}/images/search/product_img6.png" alt=""
+                             onclick="toItemInfo(${item.id})"/>
                     </div>
                     <div class="describe">
                         <p onclick="toItemInfo(${item.id})">联想(Lenovo) YOGA900 (YOGA4 PRO)多彩版</p>
                         <span class="price"><b>￥</b><span class="priceContent">4399.00</span></span>
-                        <span class="addCart"><img id="collect" src="../images/search/care.png" alt=""/><a
+                        <span class="addCart"><img id="collect"
+                                                   src="${pageContext.request.contextPath}/images/search/care.png"
+                                                   alt=""/><a
                                 href="javascript:void(0);" class="add_cart">加入购物车</a></span>
                         <!--<span class="succee" style="display: none">
                             <img src="/images/search/product_true.png" alt="" />
@@ -160,12 +145,15 @@
                 </div>
                 <div class="lf" id="d1">
                     <div class="img">
-                        <img src="../images/search/product_img1.png" alt="" onclick="toItemInfo(${item.id})"/>
+                        <img src="${pageContext.request.contextPath}/images/search/product_img1.png" alt=""
+                             onclick="toItemInfo(${item.id})"/>
                     </div>
                     <div class="describe">
                         <p onclick="toItemInfo(${item.id})">联想(Lenovo) YOGA900 (YOGA4 PRO)多彩版</p>
                         <span class="price"><b>￥</b><span class="priceContent">4399.00</span></span>
-                        <span class="addCart"><img id="collect" src="../images/search/care.png" alt=""/><a
+                        <span class="addCart"><img id="collect"
+                                                   src="${pageContext.request.contextPath}/images/search/care.png"
+                                                   alt=""/><a
                                 href="javascript:void(0);" class="add_cart">加入购物车</a></span>
                         <!--<span class="succee" style="display: none">
                             <img src="/images/search/product_true.png" alt="" />
@@ -175,12 +163,15 @@
                 </div>
                 <div class="lf" id="d1">
                     <div class="img">
-                        <img src="../images/search/product_img2.png" alt="" onclick="toItemInfo(${item.id})"/>
+                        <img src="${pageContext.request.contextPath}/images/search/product_img2.png" alt=""
+                             onclick="toItemInfo(${item.id})"/>
                     </div>
                     <div class="describe">
                         <p onclick="toItemInfo(${item.id})">联想(Lenovo) YOGA900 (YOGA4 PRO)多彩版</p>
                         <span class="price"><b>￥</b><span class="priceContent">4399.00</span></span>
-                        <span class="addCart"><img id="collect" src="../images/search/care.png" alt=""/><a
+                        <span class="addCart"><img id="collect"
+                                                   src="${pageContext.request.contextPath}/images/search/care.png"
+                                                   alt=""/><a
                                 href="javascript:void(0);" class="add_cart">加入购物车</a></span>
                         <!--<span class="succee" style="display: none">
                             <img src="/images/search/product_true.png" alt="" />
@@ -190,12 +181,15 @@
                 </div>
                 <div class="lf" id="d1">
                     <div class="img">
-                        <img src="../images/search/product_img3.png" alt="" onclick="toItemInfo(${item.id})"/>
+                        <img src="${pageContext.request.contextPath}/images/search/product_img3.png" alt=""
+                             onclick="toItemInfo(${item.id})"/>
                     </div>
                     <div class="describe">
                         <p onclick="toItemInfo(${item.id})">联想(Lenovo) YOGA900 (YOGA4 PRO)多彩版</p>
                         <span class="price"><b>￥</b><span class="priceContent">4399.00</span></span>
-                        <span class="addCart"><img id="collect" src="../images/search/care.png" alt=""/><a
+                        <span class="addCart"><img id="collect"
+                                                   src="${pageContext.request.contextPath}/images/search/care.png"
+                                                   alt=""/><a
                                 href="javascript:void(0);" class="add_cart">加入购物车</a></span>
                         <!--<span class="succee" style="display: none">
                             <img src="/images/search/product_true.png" alt="" />
@@ -205,12 +199,15 @@
                 </div>
                 <div class="lf" id="d1">
                     <div class="img">
-                        <img src="../images/search/product_img4.png" alt="" onclick="toItemInfo(${item.id})"/>
+                        <img src="${pageContext.request.contextPath}/images/search/product_img4.png" alt=""
+                             onclick="toItemInfo(${item.id})"/>
                     </div>
                     <div class="describe">
                         <p onclick="toItemInfo(${item.id})">联想(Lenovo) YOGA900 (YOGA4 PRO)多彩版</p>
                         <span class="price"><b>￥</b><span class="priceContent">4399.00</span></span>
-                        <span class="addCart"><img id="collect" src="../images/search/care.png" alt=""/><a
+                        <span class="addCart"><img id="collect"
+                                                   src="${pageContext.request.contextPath}/images/search/care.png"
+                                                   alt=""/><a
                                 href="javascript:void(0);" class="add_cart">加入购物车</a></span>
                         <!--<span class="succee" style="display: none">
                             <img src="/images/search/product_true.png" alt="" />
@@ -220,12 +217,15 @@
                 </div>
                 <div class="lf" id="d1">
                     <div class="img">
-                        <img src="../images/search/product_img5.png" alt="" onclick="toItemInfo(${item.id})"/>
+                        <img src="${pageContext.request.contextPath}/images/search/product_img5.png" alt=""
+                             onclick="toItemInfo(${item.id})"/>
                     </div>
                     <div class="describe">
                         <p onclick="toItemInfo(${item.id})">联想(Lenovo) YOGA900 (YOGA4 PRO)多彩版</p>
                         <span class="price"><b>￥</b><span class="priceContent">4399.00</span></span>
-                        <span class="addCart"><img id="collect" src="../images/search/care.png" alt=""/><a
+                        <span class="addCart"><img id="collect"
+                                                   src="${pageContext.request.contextPath}/images/search/care.png"
+                                                   alt=""/><a
                                 href="javascript:void(0);" class="add_cart">加入购物车</a></span>
                         <!--<span class="succee" style="display: none">
                             <img src="/images/search/product_true.png" alt="" />
@@ -239,55 +239,14 @@
 </div>
 <!-- 尾部-->
 <!-- 页面底部-->
-<div class="foot_bj">
-    <div id="foot">
-        <div class="lf">
-            <p class="footer1"><img src="../images/footer/logo.png" alt="" class=" footLogo"/></p>
-            <p class="footer2"><img src="../images/footer/footerFont.png" alt=""/></p>
-        </div>
-        <div class="foot_left lf">
-            <ul>
-                <li><a href="#"><h3>买家帮助</h3></a></li>
-                <li><a href="#">新手指南</a></li>
-                <li><a href="#">服务保障</a></li>
-                <li><a href="#">常见问题</a></li>
-            </ul>
-            <ul>
-                <li><a href="#"><h3>商家帮助</h3></a></li>
-                <li><a href="#">商家入驻</a></li>
-                <li><a href="#">商家后台</a></li>
-            </ul>
-            <ul>
-                <li><a href="#"><h3>关于我们</h3></a></li>
-                <li><a href="#">关于阿甲</a></li>
-                <li><a href="#">联系我们</a></li>
-                <li>
-                    <img src="../images/footer/wechat.png" alt=""/>
-                    <img src="../images/footer/sinablog.png" alt=""/>
-                </li>
-            </ul>
-        </div>
-        <div class="service">
-            <p>阿甲商城客户端</p>
-            <img src="../images/footer/ios.png" class="lf">
-            <img src="../images/footer/android.png" alt="" class="lf"/>
-        </div>
-        <div class="download">
-            <img src="../images/footer/erweima.png">
-        </div>
-        <!-- 页面底部-备案号 #footer -->
-        <div class="record">
-            &copy;2017 阿甲集团有限公司 版权所有 京ICP证xxxxxxxxxxx
-        </div>
-    </div>
-</div>
+<jsp:include page="commons/footer.jsp"></jsp:include>
 <div class="modal" style="display:none">
     <div class="modal_dialog">
         <div class="modal_header">
             操作提醒
         </div>
         <div class="modal_information">
-            <img src="../images/model/model_img2.png" alt=""/>
+            <img src="${pageContext.request.contextPath}/images/model/model_img2.png" alt=""/>
             <span>将您的宝贝加入购物车？</span>
 
         </div>
@@ -295,9 +254,9 @@
         <div class="no"><span>取消</span></div>
     </div>
 </div>
-<script src="../js/jquery-3.1.1.min.js"></script>
-<script src="../../js"></script>
-<script src="../js/jquery.page.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.page.js"></script>
 <script>
     $(".add_cart").click(function () {
         $(".modal").show();
@@ -344,7 +303,7 @@
     })
     $(".yes").click(function () {
         $(".modal").hide();
-        $('#collect').attr("src", "../images/search/care1.png");
+        $('#collect').attr("src", "${pageContext.request.contextPath}/images/search/care1.png");
     })
 </script>
 </body>

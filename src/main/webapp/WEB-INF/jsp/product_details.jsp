@@ -1,54 +1,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
     <title>阿甲商城学子详情页</title>
-    <link rel="stylesheet" href="../css/header.css"/>
-    <link href="../css/pro_details.css" rel="Stylesheet"/>
-    <link href="../css/animate.css" rel="Stylesheet"/>
-    <link rel="stylesheet" href="../css/footer.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css"/>
+    <link href="${pageContext.request.contextPath}/css/pro_details.css" rel="Stylesheet"/>
+    <link href="${pageContext.request.contextPath}/css/animate.css" rel="Stylesheet"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css"/>
 </head>
 <body>
 <!-- 页面顶部-->
-<header id="top">
-    <div id="logo" class="lf">
-        <img class="animated jello" src="../images/header/logo.png" alt="logo"/>
-    </div>
-    <div id="top_input" class="lf">
-        <input id="input" type="text" placeholder="请输入您要搜索的内容"/>
-        <div class="seek" tabindex="-1">
-            <div class="actived"><span>分类搜索</span> <img src="../images/header/header_normal.png" alt=""/></div>
-            <div class="seek_content">
-                <div id="shcy">生活餐饮</div>
-                <div id="xxyp">学习用品</div>
-                <div id="srdz">私人订制</div>
-            </div>
-        </div>
-        <a href="" class="rt"><img id="search" src="../images/header/search.png" alt="搜索"/></a>
-    </div>
-    <div class="rt">
-        <ul class="lf">
-            <li><a href="myCollect.html" title="我的收藏"><img class="care" src="../images/header/care.png"
-                                                           alt=""/></a><b>|</b></li>
-            <li><a href="myOrder.html" title="我的订单"><img class="order" src="../images/header/order.png"
-                                                         alt=""/></a><b>|</b></li>
-            <li><a href="cart.html" title="我的购物车"><img class="shopcar" src="../images/header/shop_car.png"
-                                                       alt=""/></a><b>|</b></li>
-            <li><a href="lookforward.html">帮助</a><b>|</b></li>
-            <li><a href="login.html">登录</a></li>
-        </ul>
-    </div>
-</header>
-<!-- nav主导航-->
-<nav id="nav">
-    <ul>
-        <li><a href="index.html" class="active">首页</a></li>
-        <li><a href="item_food.html">生活餐饮</a></li>
-        <li><a href="itemCat.html">学习用品</a></li>
-        <li><a href="lookforward.html">私人定制</a></li>
-    </ul>
-</nav>
+<jsp:include page="commons/header.jsp"></jsp:include>
 <!-- 内容-->
 <!--细节导航-->
 <div id="nav_detail">
@@ -59,55 +23,62 @@
     <!-- 左侧-->
     <div id="preview" class="lf">
         <div id="mediumDiv">
-            <img id="mImg" src="../images/product_detail/product_detail_img15.png"/>
+            <img id="mImg" src="${picParams[0].form}"/>
         </div>
         <div id="icon_all">
             <ul id="icon_list">
-                <li class="i1"><img src="../images/product_detail/product_detail_img1.jpg"/></li>
-                <li class="i1"><img src="../images/product_detail/product_detail_img2.jpg"/></li>
-                <li class="i1"><img src="../images/product_detail/product_detail_img3.jpg"/></li>
-                <li class="i1"><img src="../images/product_detail/product_detail_img4.jpg"/></li>
-                <li class="li"><img src="../images/product_detail/product_detail_img5.jpg"/></li>
+                <c:forEach var="picParam" items="${picParams}">
+                    <li class="i1"><img src="${picParam.key}"/></li>
+                </c:forEach>
             </ul>
         </div>
     </div>
     <!-- 右侧-->
     <div class="right_detail lf">
         <!-- 商品名称-->
-        <h1>Lenovo-YOGA 700</h1>
+        <h1>${item.brand} ${item.model}</h1>
         <!-- 商品全称-->
-        <h3>(i7-7500U 8G 256GSSD 2G独显 全高清IPS 360°翻转 正版office)</h3>
+        <h3>(${item.title})</h3>
         <!-- 价格部分-->
         <div class="price">
-            <div id="pro_price"><b>学员售价：</b><span>￥5999.00</span></div>
+            <div id="pro_price"><b>学员售价：</b><span>￥${item.price}</span></div>
             <div class="promise">
                 <b>服务承诺：</b>
                 <span>*退货补运费</span>
                 <span>*30天无忧退货</span>
                 <span>*48小时快速退款</span>
                 <span>*72小时发货</span>
+                <span>*${item.sellPoint}</span>
             </div>
         </div>
         <!-- 参数部分 客服-->
         <p class="parameter">
             <b>客服：</b>
-            <span class="connect">联系客服</span><img class="gif" src="../images/product_detail/kefuf.gif">
+            <span class="connect">联系客服</span><img class="gif"
+                                                  src="${pageContext.request.contextPath}/images/product_detail/kefuf.gif">
         </p>
-        <!-- 颜色-->
-        <p class="style" id="choose_color">
-            <s class="color">颜色：</s>
-            <input type="button" class="i1" value="黑色" title="黑色"/>
-            <input type="button" class="i2" value="灰色" title="灰色"/>
-            <input type="button" class="i3" value="金色" title="金色"/>
-            <input type="button" class="i4" value="白色" title="白色"/>
-        </p>
-        <!-- 规格-->
-        <p>
-            <s>规格：</s>
-            <span class="avenge">15寸 15 1T</span>
-            <span class="avenge">18寸 18 2T</span>
-            <span class="avenge">19寸 19 3T</span>
-        </p>
+        <c:forEach items="${allParams}" var="aParam">
+            <c:if test='${aParam.key=="颜色"}'>
+                <!-- 颜色-->
+                <p class="style" id="choose_color">
+                    <s class="color">颜色：</s>
+                    <c:forEach items="${aParam.values}" var="val">
+                        <input type="button" class="i1" value="${val}" title="${val}"/>
+                    </c:forEach>
+                </p>
+            </c:if>
+            <c:if test='${aParam.key=="型号"}'>
+                <!-- 规格-->
+                <p>
+                    <s>规格：</s>
+                    <c:forEach items="${aParam.values}" var="val">
+                        <span class="avenge">${val}</span>
+                    </c:forEach>
+                </p>
+            </c:if>
+        </c:forEach>
+
+
         <!-- 未选择规格，颜色时状态-->
         <div class="message"></div>
         <!-- 数量-->
@@ -120,10 +91,11 @@
         <!-- 购买部分-->
         <div class="shops">
             <a href="cart.html" class="buy lf" id="buy_now">立即购买</a>
-            <a href="#" class="shop lf" id="add_cart"><img src="../images/product_detail/product_detail_img7.png"
-                                                           alt=""/>加入购物车</a>
+            <a href="#" class="shop lf" id="add_cart"><img
+                    src="${pageContext.request.contextPath}/images/product_detail/product_detail_img7.png"
+                    alt=""/>加入购物车</a>
             <a href="#" class="collection lf" id="collect"><span>收藏</span></a><b><img
-                src="../images/product_detail/product_detail_img6.png" alt=""/></b>
+                src="${pageContext.request.contextPath}/images/product_detail/product_detail_img6.png" alt=""/></b>
         </div>
     </div>
 </div>
@@ -135,25 +107,29 @@
             <div id="demo1" style="float:left"><!-- 第一个宽度显示 -->
                 <div class="detail_1 lf">
                     <div class="detail_img1">
-                        <img src="../images/product_detail/product_detail_1.png" border="0">
+                        <img src="${pageContext.request.contextPath}/images/product_detail/product_detail_1.png"
+                             border="0">
                     </div>
                     <p>ThinkPad New S2 (20GUA00QCD)13.3英寸超霸</p>
                 </div>
                 <div class="detail_1 lf">
                     <div class="detail_img1">
-                        <img src="../images/product_detail/product_detail_2.png" border="0">
+                        <img src="${pageContext.request.contextPath}/images/product_detail/product_detail_2.png"
+                             border="0">
                     </div>
                     <p>戴尔 DELL燃7000 R1605S 超霸</p>
                 </div>
                 <div class="detail_1 lf">
                     <div class="detail_img1">
-                        <img src="../images/product_detail/product_detail_3.png" border="0">
+                        <img src="${pageContext.request.contextPath}/images/product_detail/product_detail_3.png"
+                             border="0">
                     </div>
                     <p>戴尔(DELL)魔方15MF Pro-R2505TSS灵</p>
                 </div>
                 <div class="detail_1 lf">
                     <div class="detail_img1">
-                        <img src="../images/product_detail/product_detail_4.png" border="0">
+                        <img src="${pageContext.request.contextPath}/images/product_detail/product_detail_4.png"
+                             border="0">
                     </div>
                     <p>联想(Lenovo) YOGA900 (YOGA4 PRO)多彩版</p>
                 </div>
@@ -176,7 +152,7 @@
             </div>
         </div>
         <div class="cart rt">
-            <img src="../images/product_detail/product_detail_img9.png" alt=""/>
+            <img src="${pageContext.request.contextPath}/images/product_detail/product_detail_img9.png" alt=""/>
         </div>
     </div>
     <div class="left lf">
@@ -186,7 +162,8 @@
                 <div id="specification_parameter">
                     <p>
                         规格参数
-                        <img src="../images/product_detail/product_detail_icon_1.png" alt="" class="ys5"/>
+                        <img src="${pageContext.request.contextPath}/images/product_detail/product_detail_icon_1.png"
+                             alt="" class="ys5"/>
                     </p>
                     <!--<img src="images_x/canshu.png" alt="" class="ys5"/>-->
                 </div>
@@ -205,19 +182,22 @@
             <div id="product_introduction">
                 <p>
                     商品介绍
-                    <img src="../images/product_detail/product_detail_icon_4.png" alt="" class="ys5"/>
+                    <img src="${pageContext.request.contextPath}/images/product_detail/product_detail_icon_4.png" alt=""
+                         class="ys5"/>
                 </p>
-                <img src="../images/product_detail/product_detail_img8.png" alt=""/>
+                <img src="${pageContext.request.contextPath}/images/product_detail/product_detail_img8.png" alt=""/>
             </div>
             <div id="sale_protection">
                 <p>
                     售后保障
-                    <img src="../images/product_detail/product_detail_icon_3.png" alt="" class="ys5"/>
+                    <img src="${pageContext.request.contextPath}/images/product_detail/product_detail_icon_3.png" alt=""
+                         class="ys5"/>
                 </p>
 
                 <div class="sale_content">
                     <p class="paper" id="sale_protect">
-                        <img src="../images/product_detail/product_detail_img16.png" alt=""/>
+                        <img src="${pageContext.request.contextPath}/images/product_detail/product_detail_img16.png"
+                             alt=""/>
                         正品保障
                     </p>
 
@@ -226,7 +206,8 @@
                     </p>
 
                     <p class="paper">
-                        <img src="../images/product_detail/product_detail_img16.png" alt=""/>
+                        <img src="${pageContext.request.contextPath}/images/product_detail/product_detail_img16.png"
+                             alt=""/>
                         全国联保
                     </p>
 
@@ -239,7 +220,8 @@
             <div id="packing_list">
                 <p>
                     包装清单
-                    <img src="../images/product_detail/product_detail_icon_2.png" alt="" class="ys5"/>
+                    <img src="${pageContext.request.contextPath}/images/product_detail/product_detail_icon_2.png" alt=""
+                         class="ys5"/>
                 </p>
 
                 <p class="content">笔记本 x1 适配器 x1 电源线 x1 电池 x1 说明书（电子版）x1 备注：笔记本电脑的背面只会标注此电脑的系列，例如： XPS 13-9360 ，
@@ -249,92 +231,32 @@
     </div>
     <div class="right rt">
         <div class="aside_nav">
-            <p><i><img src="../images/product_detail/product_detail_icon_g_1.png" alt=""/></i><a
+            <p><i><img src="${pageContext.request.contextPath}/images/product_detail/product_detail_icon_g_1.png"
+                       alt=""/></i><a
                     href="#specification_parameter">规格参数</a></p>
-            <p><i><img src="../images/product_detail/product_detail_icon_t_1.png" alt=""/></i><a
+            <p><i><img src="${pageContext.request.contextPath}/images/product_detail/product_detail_icon_t_1.png"
+                       alt=""/></i><a
                     href="#product_introduction">商品介绍</a></p>
-            <p><i><img src="../images/product_detail/product_detail_icon_d_1.png" alt=""/></i><a
+            <p><i><img src="${pageContext.request.contextPath}/images/product_detail/product_detail_icon_d_1.png"
+                       alt=""/></i><a
                     href="#sale_protection">售后保障</a></p>
-            <p><i><img src="../images/product_detail/product_detail_icon_bao_1.png" alt=""/></i><a href="#sale_protect">包装清单</a>
+            <p><i><img src="${pageContext.request.contextPath}/images/product_detail/product_detail_icon_bao_1.png"
+                       alt=""/></i><a href="#sale_protect">包装清单</a>
             </p>
-            <p><i><img src="../images/product_detail/product_detail_icon_up_1.png" alt=""/></i><a href="#">回到顶部</a></p>
+            <p><i><img src="${pageContext.request.contextPath}/images/product_detail/product_detail_icon_up_1.png"
+                       alt=""/></i><a href="#">回到顶部</a></p>
         </div>
     </div>
 </div>
 <!-- 品质保障，私人定制等-->
-<div id="foot_box">
-    <div class="icon1 lf">
-        <img src="../images/footer/icon1.png" alt=""/>
-
-        <h3>品质保障</h3>
-    </div>
-    <div class="icon2 lf">
-        <img src="../images/footer/icon2.png" alt=""/>
-
-        <h3>私人定制</h3>
-    </div>
-    <div class="icon3 lf">
-        <img src="../images/footer/icon3.png" alt=""/>
-
-        <h3>学员特供</h3>
-    </div>
-    <div class="icon4 lf">
-        <img src="../images/footer/icon4.png" alt=""/>
-
-        <h3>专属特权</h3>
-    </div>
-</div>
-<!-- 页面底部-->
-<div class="foot_bj">
-    <div id="foot">
-        <div class="lf">
-            <p class="footer1"><img src="../images/footer/logo.png" alt="" class=" footLogo"/></p>
-            <p class="footer2"><img src="../images/footer/footerFont.png" alt=""/></p>
-
-        </div>
-        <div class="foot_left lf">
-            <ul>
-                <li><a href="#"><h3>买家帮助</h3></a></li>
-                <li><a href="#">新手指南</a></li>
-                <li><a href="#">服务保障</a></li>
-                <li><a href="#">常见问题</a></li>
-            </ul>
-            <ul>
-                <li><a href="#"><h3>商家帮助</h3></a></li>
-                <li><a href="#">商家入驻</a></li>
-                <li><a href="#">商家后台</a></li>
-            </ul>
-            <ul>
-                <li><a href="#"><h3>关于我们</h3></a></li>
-                <li><a href="#">关于阿甲</a></li>
-                <li><a href="#">联系我们</a></li>
-                <li>
-                    <img src="../images/footer/wechat.png" alt=""/>
-                    <img src="../images/footer/sinablog.png" alt=""/>
-                </li>
-            </ul>
-        </div>
-        <div class="service">
-            <p>阿甲商城客户端</p>
-            <img src="../images/footer/ios.png" class="lf">
-            <img src="../images/footer/android.png" alt="" class="lf"/>
-        </div>
-        <div class="download">
-            <img src="../images/footer/erweima.png">
-        </div>
-        <!-- 页面底部-备案号 #footer -->
-        <div class="record">
-            &copy;2017 阿甲集团有限公司 版权所有 京ICP证xxxxxxxxxxx
-        </div>
-    </div>
-</div>
+<jsp:include page="commons/footer.jsp"></jsp:include>
 <div class="modal" style="display:none">
     <div class="modal_dialog">
         <div class="modal_header">
             操作提醒
         </div>
         <div class="modal_information">
-            <img src="../images/model/model_img2.png" alt=""/>
+            <img src="${pageContext.request.contextPath}/images/model/model_img2.png" alt=""/>
             <span>是否将您的宝贝加入收藏夹</span>
 
         </div>
@@ -342,8 +264,8 @@
         <div class="no"><span>取消</span></div>
     </div>
 </div>
-<script src="../js/jquery-3.1.1.min.js"></script>
-<script src="../../js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/js"></script>
 <!--图片轮播悬停进入详情页效果-->
 <script>
     var speed = 20;

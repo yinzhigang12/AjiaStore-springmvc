@@ -10,15 +10,6 @@
 </head>
 <!-- 页面顶部-->
 <jsp:include page="commons/header.jsp"></jsp:include>
-<!-- nav主导航-->
-<nav id="nav">
-    <ul>
-        <li><a href="index.html" class="active">首页</a></li>
-        <li><a href="item_food.html">生活餐饮</a></li>
-        <li><a href="itemCat.html">学习用品</a></li>
-        <li><a href="lookforward.html">私人定制</a></li>
-    </ul>
-</nav>
 <!--500-->
 <div id="container">
     <div class="rightsidebar_box rt">
@@ -70,29 +61,6 @@
         <!-- 宽度超大 -->
     </div>
     <!-- 外面大框 -->
-</div>
-<!-- 品质保障，私人定制等-->
-<div id="foot_box">
-    <div class="icon1 lf">
-        <img src="${pageContext.request.contextPath}/images/footer/icon1.png" alt=""/>
-
-        <h3>品质保障</h3>
-    </div>
-    <div class="icon2 lf">
-        <img src="${pageContext.request.contextPath}/images/footer/icon2.png" alt=""/>
-
-        <h3>私人定制</h3>
-    </div>
-    <div class="icon3 lf">
-        <img src="${pageContext.request.contextPath}/images/footer/icon3.png" alt=""/>
-
-        <h3>学员特供</h3>
-    </div>
-    <div class="icon4 lf">
-        <img src="${pageContext.request.contextPath}/images/footer/icon4.png" alt=""/>
-
-        <h3>专属特权</h3>
-    </div>
 </div>
 <!-- 页面底部-->
 <jsp:include page="commons/footer.jsp"></jsp:include>

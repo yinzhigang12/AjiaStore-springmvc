@@ -4,69 +4,37 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>阿甲学子商城学习用品类目页</title>
-    <link href="../css/header.css" rel="Stylesheet"/>
-    <link href="../css/footer.css" rel="Stylesheet"/>
-    <link href="../css/animate.css" rel="Stylesheet"/>
-    <link href="../css/itemCat.css" rel="Stylesheet"/>
-    <link rel="stylesheet" href="../css/slide.css"/>
+    <link href="${pageContext.request.contextPath}/css/header.css" rel="Stylesheet"/>
+    <link href="${pageContext.request.contextPath}/css/footer.css" rel="Stylesheet"/>
+    <link href="${pageContext.request.contextPath}/css/animate.css" rel="Stylesheet"/>
+    <link href="${pageContext.request.contextPath}/css/itemCat.css" rel="Stylesheet"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/slide.css"/>
 </head>
 <body>
 <!-- 页面顶部-->
-<header id="top">
-    <div id="logo" class="lf">
-        <img class="animated jello" src="../images/header/logo.png" alt="logo"/>
-    </div>
-    <div id="top_input" class="lf">
-        <input id="input" type="text" placeholder="请输入您要搜索的内容"/>
-        <div class="seek" tabindex="-1">
-            <div class="actived"><span>分类搜索</span> <img src="../images/header/header_normal.png" alt=""/></div>
-            <div class="seek_content">
-                <div id="shcy">生活餐饮</div>
-                <div id="xxyp">学习用品</div>
-                <div id="srdz">私人订制</div>
-            </div>
-        </div>
-        <a href="" class="rt"><img id="search" src="../images/header/search.png" alt="搜索"/></a>
-    </div>
-    <div class="rt">
-        <ul class="lf">
-            <li><a href="myCollect.html" title="我的收藏"><img class="care" src="../images/header/care.png"
-                                                           alt=""/></a><b>|</b></li>
-            <li><a href="myOrder.html" title="我的订单"><img class="order" src="../images/header/order.png"
-                                                         alt=""/></a><b>|</b></li>
-            <li><a href="cart.html" title="我的购物车"><img class="shopcar" src="../images/header/shop_car.png"
-                                                       alt=""/></a><b>|</b></li>
-            <li><a href="lookforward.html">帮助</a><b>|</b></li>
-            <li><a href="login.html">登录</a></li>
-        </ul>
-    </div>
-</header>
-<!-- nav主导航-->
-<nav id="nav">
-    <ul>
-        <li><a href="index.html">首页</a></li>
-        <li><a href="item_food.html">生活餐饮</a></li>
-        <li><a href="itemCat.html" class="acti">学习用品</a></li>
-        <li><a href="lookforward.html">私人定制</a></li>
-    </ul>
-</nav>
+<jsp:include page="commons/header.jsp"></jsp:include>
 <!-- banner部分-->
 <div class="ck-slide">
     <ul class="ck-slide-wrapper">
         <li>
-            <a href="product_details.html"><img src="../images/itemCat/itemCat_banner1.png" alt=""></a>
+            <a href="product_details.html"><img
+                    src="${pageContext.request.contextPath}/images/itemCat/itemCat_banner1.png" alt=""></a>
         </li>
         <li style="display:none">
-            <a href="product_details.html"><img src="../images/itemCat/itemCat_banner2.png" alt=""></a>
+            <a href="product_details.html"><img
+                    src="${pageContext.request.contextPath}/images/itemCat/itemCat_banner2.png" alt=""></a>
         </li>
         <li style="display:none">
-            <a href="product_details.html"><img src="../images/itemCat/itemCat_banner3.png" alt=""></a>
+            <a href="product_details.html"><img
+                    src="${pageContext.request.contextPath}/images/itemCat/itemCat_banner3.png" alt=""></a>
         </li>
         <li style="display:none">
-            <a href="product_details.html"><img src="../images/itemCat/itemCat_banner4.png" alt=""></a>
+            <a href="product_details.html"><img
+                    src="${pageContext.request.contextPath}/images/itemCat/itemCat_banner4.png" alt=""></a>
         </li>
         <li style="display:none">
-            <a href="product_details.html"><img src="../images/itemCat/itemCat_banner1.png" alt=""></a>
+            <a href="product_details.html"><img
+                    src="${pageContext.request.contextPath}/images/itemCat/itemCat_banner1.png" alt=""></a>
         </li>
     </ul>
     <a href="javascript:;" class="ctrl-slide ck-prev">上一张</a> <a href="javascript:;" class="ctrl-slide ck-next">下一张</a>
@@ -83,7 +51,8 @@
     </div>
 </div>
 <!--/*楼梯1f*/-->
-<h2 class="stair"><span><img src="../images/itemCat/computer_icon.png" alt=".stair"/></span>办公电脑 /1F</h2>
+<h2 class="stair"><span><img src="${pageContext.request.contextPath}/images/itemCat/computer_icon.png"
+                             alt=".stair"/></span>办公电脑 /1F</h2>
 
 <div class="lf1">
     <div class="lf1_top">
@@ -102,7 +71,7 @@
 
                 <p class="top_ys4 color_2"><a href="product_details.html">查看详情</a></p>
             </div>
-            <span><img src="../images/itemCat/study_computer_img1.png" alt=""/></span>
+            <span><img src="${pageContext.request.contextPath}/images/itemCat/study_computer_img1.png" alt=""/></span>
         </div>
         <!-- 上面部分右侧区域-->
         <div class="right lf">
@@ -119,14 +88,14 @@
 
                 <p class="top_ys4 color_2"><a href="product_details.html">查看详情</a></p>
             </div>
-            <span><img src="../images/itemCat/study_computer_img2.png" alt=""/></span>
+            <span><img src="${pageContext.request.contextPath}/images/itemCat/study_computer_img2.png" alt=""/></span>
         </div>
     </div>
     <div class="lf1_bottom">
         <div class="item_cat lf">
             <div class="cat_header color_2">
                 <span>
-                    <img src="../images/itemCat/computer_icon1.png" alt=""/>
+                    <img src="${pageContext.request.contextPath}/images/itemCat/computer_icon1.png" alt=""/>
                     电脑,办公/1F
                 </span>
             </div>
@@ -161,7 +130,7 @@
             </div>
         </div>
         <div class="item_msg lf">
-            <img src="../images/itemCat/study_computer_img3.png" alt=""/>
+            <img src="${pageContext.request.contextPath}/images/itemCat/study_computer_img3.png" alt=""/>
 
             <p class="bottom_ys2">戴尔(DELL)XPS13-9360-R1609 13.3英寸微边框笔记本电脑</p>
 
@@ -170,7 +139,7 @@
             <p class="bottom_ys4 color_2"><a href="product_details.html">查看详情</a></p>
         </div>
         <div class="item_msg lf">
-            <img src="../images/itemCat/study_computer_img4.png" alt=""/>
+            <img src="${pageContext.request.contextPath}/images/itemCat/study_computer_img4.png" alt=""/>
 
             <p class="bottom_ys2">14.8mm超轻薄笔记本电脑 航海王版 13.3英寸微边框笔记本电脑</p>
 
@@ -179,7 +148,7 @@
             <p class="bottom_ys4 color_2"><a href="product_details.html">查看详情</a></p>
         </div>
         <div class="item_msg lf">
-            <img src="../images/itemCat/study_computer_img5.png" alt=""/>
+            <img src="${pageContext.request.contextPath}/images/itemCat/study_computer_img5.png" alt=""/>
 
             <p class="bottom_ys2">联想(Lenovo) YOGA900 多彩版 13.3英寸微边框笔记本电脑</p>
 
@@ -190,13 +159,15 @@
     </div>
 </div>
 <!--楼梯2f-->
-<h2 class="stair"><span><img src="../images/itemCat/stationery_icon.png" alt=".stair"/></span>办公文具 /2F</h2>
+<h2 class="stair"><span><img src="${pageContext.request.contextPath}/images/itemCat/stationery_icon.png" alt=".stair"/></span>办公文具
+    /2F</h2>
 
 <div class="lf1">
     <div class="lf1_top">
         <!-- 上面部分左侧区域-->
         <div class="left lf">
-            <div class="left_ys1 lf"><img src="../images/itemCat/study_stationery_img1.png" alt=""/></div>
+            <div class="left_ys1 lf"><img
+                    src="${pageContext.request.contextPath}/images/itemCat/study_stationery_img1.png" alt=""/></div>
             <div class="left_pro lf">
                 <p class="top_ys1">雅致布面年历本</p>
 
@@ -211,7 +182,8 @@
         </div>
         <!-- 上面部分右侧区域-->
         <div class="right lf">
-            <div class="left_ys2 lf"><img src="../images/itemCat/study_stationery_img2.png" alt=""/></div>
+            <div class="left_ys2 lf"><img
+                    src="${pageContext.request.contextPath}/images/itemCat/study_stationery_img2.png" alt=""/></div>
             <div class="right_ys rt">
                 <p class="top_ys1">透视网格拉链袋</p>
                 <p class="top_ys2">
@@ -227,7 +199,7 @@
         <div class="item_cat lf">
             <div class="cat_header color_1">
                 <span>
-                    <img src="../images/itemCat/stationery_icon1.png" alt=""/>
+                    <img src="${pageContext.request.contextPath}/images/itemCat/stationery_icon1.png" alt=""/>
                     办公文具/2F
                 </span>
             </div>
@@ -262,7 +234,7 @@
             </div>
         </div>
         <div class="item_msg lf">
-            <img src="../images/itemCat/study_stationery_img3.png" alt=""/>
+            <img src="${pageContext.request.contextPath}/images/itemCat/study_stationery_img3.png" alt=""/>
 
             <p class="bottom_ys2">得力（deli）1548A商务办公桌面计算器 太阳能双电源</p>
 
@@ -271,7 +243,7 @@
             <p class="bottom_ys4 color_1"><a href="product_details.html">查看详情</a></p>
         </div>
         <div class="item_msg lf">
-            <img src="../images/itemCat/study_stationery_img4.png" alt=""/>
+            <img src="${pageContext.request.contextPath}/images/itemCat/study_stationery_img4.png" alt=""/>
 
             <p class="bottom_ys2">施耐德（Schneider） K15 经典款圆珠笔 </p>
 
@@ -282,7 +254,7 @@
 
         <div class="item_msg lf">
             <a href="product_details.html">
-                <img src="../images/itemCat/study_stationery_img5.png" alt=""/>
+                <img src="${pageContext.request.contextPath}/images/itemCat/study_stationery_img5.png" alt=""/>
                 <p class="bottom_ys2">齐心皮面日程本子2017.1-2018.6计划记事本效率手册</p>
                 <p class="bottom_ys3 price_ys3">￥23.00</p>
                 <p class="bottom_ys4 color_1"><a href="product_details.html" id="iii">查看详情</a></p>
@@ -292,74 +264,10 @@
     </div>
 </div>
 <!-- 品质保障，私人定制等-->
-<div id="foot_box">
-    <div class="icon1 lf">
-        <img src="../images/footer/icon1.png" alt=""/>
-
-        <h3>品质保障</h3>
-    </div>
-    <div class="icon2 lf">
-        <img src="../images/footer/icon2.png" alt=""/>
-
-        <h3>私人定制</h3>
-    </div>
-    <div class="icon3 lf">
-        <img src="../images/footer/icon3.png" alt=""/>
-
-        <h3>学员特供</h3>
-    </div>
-    <div class="icon4 lf">
-        <img src="../images/footer/icon4.png" alt=""/>
-
-        <h3>专属特权</h3>
-    </div>
-</div>
-<!-- 页面底部-->
-<div class="foot_bj">
-    <div id="foot">
-        <div class="lf">
-            <p class="footer1"><img src="../images/footer/logo.png" alt="" class=" footLogo"/></p>
-            <p class="footer2"><img src="../images/footer/footerFont.png" alt=""/></p>
-        </div>
-        <div class="foot_left lf">
-            <ul>
-                <li><a href="#"><h3>买家帮助</h3></a></li>
-                <li><a href="#">新手指南</a></li>
-                <li><a href="#">服务保障</a></li>
-                <li><a href="#">常见问题</a></li>
-            </ul>
-            <ul>
-                <li><a href="#"><h3>商家帮助</h3></a></li>
-                <li><a href="#">商家入驻</a></li>
-                <li><a href="#">商家后台</a></li>
-            </ul>
-            <ul>
-                <li><a href="#"><h3>关于我们</h3></a></li>
-                <li><a href="#">关于阿甲</a></li>
-                <li><a href="#">联系我们</a></li>
-                <li>
-                    <img src="../images/footer/wechat.png" alt=""/>
-                    <img src="../images/footer/sinablog.png" alt=""/>
-                </li>
-            </ul>
-        </div>
-        <div class="service">
-            <p>阿甲商城客户端</p>
-            <img src="../images/footer/ios.png" class="lf">
-            <img src="../images/footer/android.png" alt="" class="lf"/>
-        </div>
-        <div class="download">
-            <img src="../images/footer/erweima.png">
-        </div>
-        <!-- 页面底部-备案号 #footer -->
-        <div class="record">
-            &copy;2017 阿甲集团有限公司 版权所有 京ICP证xxxxxxxxxxx
-        </div>
-    </div>
-</div>
-<script src="../js/jquery-3.1.1.min.js"></script>
-<script src="../../js"></script>
-<script src="../js/slide.js"></script>
+<jsp:include page="commons/footer.jsp"></jsp:include>
+<script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/js"></script>
+<script src="${pageContext.request.contextPath}/js/slide.js"></script>
 <script>
     $('.ck-slide').ckSlide({
         autoPlay: true,//默认为不自动播放，需要时请以此设置

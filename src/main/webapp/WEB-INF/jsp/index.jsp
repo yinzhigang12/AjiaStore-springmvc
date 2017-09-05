@@ -21,20 +21,22 @@
                     src="${pageContext.request.contextPath}/images/index/index_banner1.png" alt=""></a>
         </li>
         <li style="display:none">
-            <a href="product_details.html"><img src="${pageContext.request.contextPath}/images/index/index_banner2.png"
-                                                alt=""></a>
+            <a href="/toItemInfo/100000021.html"><img
+                    src="${pageContext.request.contextPath}/images/index/index_banner2.png"
+                    alt=""></a>
         </li>
         <li style="display:none">
-            <a href="product_details.html"><img src="${pageContext.request.contextPath}/images/index/index_banner3.png"
-                                                alt=""></a>
+            <a href="/lookforward.html"><img src="${pageContext.request.contextPath}/images/index/index_banner3.png"
+                                             alt=""></a>
         </li>
         <li style="display:none">
-            <a href="product_details.html"><img src="${pageContext.request.contextPath}/images/index/index_banner4.png"
-                                                alt=""></a>
+            <a href="/toItemInfo/10000019.html"><img
+                    src="${pageContext.request.contextPath}/images/index/index_banner4.png"
+                    alt=""></a>
         </li>
         <li style="display:none">
-            <a href="product_details.html"><img src="${pageContext.request.contextPath}/images/index/index_banner5.png"
-                                                alt=""></a>
+            <a href="/lookforward.html"><img src="${pageContext.request.contextPath}/images/index/index_banner5.png"
+                                             alt=""></a>
         </li>
     </ul>
     <a href="javascript:;" class="ctrl-slide ck-prev">上一张</a> <a href="javascript:;" class="ctrl-slide ck-next">下一张</a>
@@ -54,7 +56,10 @@
 <div id="product">
     <div class="product_1 lf">
         <div class="aside lf">
-            <img id="aside_image" src="${pageContext.request.contextPath}/images/index/index_Sbanner_img1.png" alt=""/>
+            <a href="/toItemInfo/100000422.html">
+                <img id="aside_image" src="${pageContext.request.contextPath}/images/index/index_Sbanner_img1.png"
+                     alt=""/>
+            </a>
         </div>
         <div class="text rt">
             <p class="ys1">联想小新<b class="ys2">Air3</b></p>
@@ -62,20 +67,24 @@
         </div>
     </div>
     <div class="product_2 lf">
-
         <div class="aside lf">
-            <img id="aside_image2" src="${pageContext.request.contextPath}/images/index/index_Sbanner_img2.png" alt=""/>
+            <a href="/toItemInfo/10000043.html">
+                <img id="aside_image2" src="${pageContext.request.contextPath}/images/index/index_Sbanner_img2.png"
+                     alt=""/>
+            </a>
         </div>
         <div class="text rt">
             <p class="ys1 ys4">得力书包<b class="ys2 ys4">Bag</b></p>
-
             <p class="ys3 ys4">给你满载而归的喜悦</p>
         </div>
 
     </div>
     <div class="product_3 lf">
         <div class="aside lf">
-            <img id="aside_image3" src="${pageContext.request.contextPath}/images/index/index_Sbanner_img3.png" alt=""/>
+            <a href="/lookforward.html">
+                <img id="aside_image3" src="${pageContext.request.contextPath}/images/index/index_Sbanner_img3.png"
+                     alt=""/>
+            </a>
         </div>
         <div class="text rt">
             <p class="ys1">刀鱼焖排骨</p>
@@ -85,7 +94,7 @@
 </div>
 <!-- welcome部分-->
 <div id="welcome">
-    <a href="">阅读更多>></a>
+    <a href="/lookforward.html">阅读更多>></a>
 </div>
 <!-- 学习用品-->
 <div id="study">
@@ -113,8 +122,11 @@
 
                 <p class="view_details"><a href="product_details.html">查看详情</a></p>
             </div>
-            <img id="study_product_vice1" src="${pageContext.request.contextPath}/images/index/index_hot_study_img2.png"
-                 alt=""/>
+            <a href="/toItemInfo/10000037.html">
+                <img id="study_product_vice1"
+                     src="${pageContext.request.contextPath}/images/index/index_hot_study_img2.png"
+                     alt=""/>
+            </a>
         </div>
         <div class="right_bottom">
             <div id="product_parameters_vice2">
@@ -123,8 +135,10 @@
                 <h3 id="product_preferential_vice2"><b id="product_price_vice2">￥68.00</b></h3>
 
                 <p class="view_details"><a href="product_details.html">查看详情</a></p>
-                <img id="study_product_vice2"
-                     src="${pageContext.request.contextPath}/images/index/index_hot_study_img3.png" alt=""/>
+                <a href="/toItemInfo/10000007.html">
+                    <img id="study_product_vice2"
+                         src="${pageContext.request.contextPath}/images/index/index_hot_study_img3.png" alt=""/>
+                </a>
             </div>
         </div>
     </div>

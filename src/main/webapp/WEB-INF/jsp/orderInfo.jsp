@@ -4,50 +4,13 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>阿甲学子商城-订单详情页</title>
-    <link rel="stylesheet" href="../css/header.css"/>
-    <link rel="stylesheet" href="../css/footer.css"/>
-    <link rel="stylesheet" href="../css/orderInfo.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/orderInfo.css"/>
 </head>
 <body>
 <!-- 页面顶部-->
-<header id="top">
-    <div id="logo" class="lf">
-        <img class="animated jello" src="../images/header/logo.png" alt="logo"/>
-    </div>
-    <div id="top_input" class="lf">
-        <input id="input" type="text" placeholder="请输入您要搜索的内容"/>
-        <div class="seek" tabindex="-1">
-            <div class="actived"><span>分类搜索</span> <img src="../images/header/header_normal.png" alt=""/></div>
-            <div class="seek_content">
-                <div id="shcy">生活餐饮</div>
-                <div id="xxyp">学习用品</div>
-                <div id="srdz">私人订制</div>
-            </div>
-        </div>
-        <a href="" class="rt"><img id="search" src="../images/header/search.png" alt="搜索"/></a>
-    </div>
-    <div class="rt">
-        <ul class="lf">
-            <li><a href="myCollect.html" title="我的收藏"><img class="care" src="../images/header/care.png"
-                                                           alt=""/></a><b>|</b></li>
-            <li><a href="myOrder.html" title="我的订单"><img class="order" src="../images/header/order.png"
-                                                         alt=""/></a><b>|</b></li>
-            <li><a href="cart.html" title="我的购物车"><img class="shopcar" src="../images/header/shop_car.png"
-                                                       alt=""/></a><b>|</b></li>
-            <li><a href="lookforward.html">帮助</a><b>|</b></li>
-            <li><a href="login.html">登录</a></li>
-        </ul>
-    </div>
-</header>
-<!-- nav主导航-->
-<nav id="nav">
-    <ul>
-        <li><a href="index.html">首页</a></li>
-        <li><a href="item_food.html">生活餐饮</a></li>
-        <li><a href="itemCat.html">学习用品</a></li>
-        <li><a href="lookforward.html">私人定制</a></li>
-    </ul>
-</nav>
+<jsp:include page="commons/header.jsp"></jsp:include>
 <!--详细信息-->
 <div id="container">
     <!-- 导航 -->
@@ -60,51 +23,55 @@
     <!-- 订单状态流程图-->
     <div id="orderStatusChart">
         <dl>
-            <dt><img src="../images/orderinfo/orderinfo_img1_2.png" alt=""/></dt>
+            <dt><img src="${pageContext.request.contextPath}/images/orderinfo/orderinfo_img1_2.png" alt=""/></dt>
             <dd>
                 <p>提交订单</p>
                 <span>2016.01.01 13:00</span>
             </dd>
         </dl>
         <dl>
-            <dt class="point"><img src="../images/orderinfo/orderinfo_img6_2.png" alt=""/></dt>
+            <dt class="point"><img src="${pageContext.request.contextPath}/images/orderinfo/orderinfo_img6_2.png"
+                                   alt=""/></dt>
         </dl>
 
         <dl>
-            <dt><img src="../images/orderinfo/orderinfo_img2_1.png" alt=""/></dt>
+            <dt><img src="${pageContext.request.contextPath}/images/orderinfo/orderinfo_img2_1.png" alt=""/></dt>
             <dd>
                 <p>付款成功</p>
                 <span>2016.01.01 13:00</span>
             </dd>
         </dl>
         <dl>
-            <dt class="point"><img src="../images/orderinfo/orderinfo_img6.png" alt=""/></dt>
+            <dt class="point"><img src="${pageContext.request.contextPath}/images/orderinfo/orderinfo_img6.png" alt=""/>
+            </dt>
         </dl>
 
         <dl>
-            <dt><img src="../images/orderinfo/orderinfo_img3.png" alt=""/></dt>
+            <dt><img src="${pageContext.request.contextPath}/images/orderinfo/orderinfo_img3.png" alt=""/></dt>
             <dd>
                 <p style="display: none">配送中</p>
                 <span style="display: none">2016.01.01 13:00</span>
             </dd>
         </dl>
         <dl>
-            <dt class="point"><img src="../images/orderinfo/orderinfo_img6.png" alt=""/></dt>
+            <dt class="point"><img src="${pageContext.request.contextPath}/images/orderinfo/orderinfo_img6.png" alt=""/>
+            </dt>
         </dl>
 
         <dl>
-            <dt><img src="../images/orderinfo/orderinfo_img4.png" alt=""/></dt>
+            <dt><img src="${pageContext.request.contextPath}/images/orderinfo/orderinfo_img4.png" alt=""/></dt>
             <dd>
                 <p style="display: none">确认收货</p>
                 <span style="display: none">2016.01.01 13:00</span>
             </dd>
         </dl>
         <dl>
-            <dt class="point"><img src="../images/orderinfo/orderinfo_img6.png" alt=""/></dt>
+            <dt class="point"><img src="${pageContext.request.contextPath}/images/orderinfo/orderinfo_img6.png" alt=""/>
+            </dt>
         </dl>
 
         <dl>
-            <dt><img src="../images/orderinfo/orderinfo_img5.png" alt=""/></dt>
+            <dt><img src="${pageContext.request.contextPath}/images/orderinfo/orderinfo_img5.png" alt=""/></dt>
             <dd>
                 <p style="display: none">评价</p>
                 <span style="display: none">2016.01.01 13:00</span>
@@ -149,10 +116,10 @@
                 <li class="p_tPrice">实付款</li>
             </ul>
             <div>订单编号：<span>1234567890123</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;成交时间：2016-11-12 11:11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系客服：<img
-                    src="../images/orderinfo/kefuf.gif" alt=""/></div>
+                    src="${pageContext.request.contextPath}/images/orderinfo/kefuf.gif" alt=""/></div>
             <ul class="item_detail">
                 <li class="p_info">
-                    <b><img src="../images/orderinfo/product_simg1.png"/></b>
+                    <b><img src="${pageContext.request.contextPath}/images/orderinfo/product_simg1.png"/></b>
                     <p class="product_name lf">
                         联想(Lenovo)YoGA5 PRO 标配版电脑 (I5-7200U 8G 512G SSD IPS)
                     </p>
@@ -177,73 +144,9 @@
 
 </div>
 <!-- 品质保障，私人定制等-->
-<div id="foot_box">
-    <div class="icon1 lf">
-        <img src="../images/footer/icon1.png" alt=""/>
-
-        <h3>品质保障</h3>
-    </div>
-    <div class="icon2 lf">
-        <img src="../images/footer/icon2.png" alt=""/>
-
-        <h3>私人定制</h3>
-    </div>
-    <div class="icon3 lf">
-        <img src="../images/footer/icon3.png" alt=""/>
-
-        <h3>学员特供</h3>
-    </div>
-    <div class="icon4 lf">
-        <img src="../images/footer/icon4.png" alt=""/>
-
-        <h3>专属特权</h3>
-    </div>
-</div>
-<!-- 页面底部-->
-<div class="foot_bj">
-    <div id="foot">
-        <div class="lf">
-            <p class="footer1"><img src="../images/footer/logo.png" alt="" class=" footLogo"/></p>
-            <p class="footer2"><img src="../images/footer/footerFont.png" alt=""/></p>
-
-        </div>
-        <div class="foot_left lf">
-            <ul>
-                <li><a href="#"><h3>买家帮助</h3></a></li>
-                <li><a href="#">新手指南</a></li>
-                <li><a href="#">服务保障</a></li>
-                <li><a href="#">常见问题</a></li>
-            </ul>
-            <ul>
-                <li><a href="#"><h3>商家帮助</h3></a></li>
-                <li><a href="#">商家入驻</a></li>
-                <li><a href="#">商家后台</a></li>
-            </ul>
-            <ul>
-                <li><a href="#"><h3>关于我们</h3></a></li>
-                <li><a href="#">关于阿甲</a></li>
-                <li><a href="#">联系我们</a></li>
-                <li>
-                    <img src="../images/footer/wechat.png" alt=""/>
-                    <img src="../images/footer/sinablog.png" alt=""/>
-                </li>
-            </ul>
-        </div>
-        <div class="service">
-            <p>阿甲商城客户端</p>
-            <img src="../images/footer/ios.png" class="lf">
-            <img src="../images/footer/android.png" alt="" class="lf"/>
-        </div>
-        <div class="download">
-            <img src="../images/footer/erweima.png">
-        </div>
-        <!-- 页面底部-备案号 #footer -->
-        <div class="record">
-            &copy;2017 阿甲集团有限公司 版权所有 京ICP证xxxxxxxxxxx
-        </div>
-    </div>
-</div>
-<script src="../js/jquery-3.1.1.min.js"></script>
+<jsp:include page="commons/footer.jsp"></jsp:include>
+</body>
+<script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
 <script>
     //搜索下拉
     $('.seek').focus(function () {
@@ -252,12 +155,12 @@
 
             $(this).removeClass('clickhover');
             $(this).find('.seek_content').hide();
-            $(this).find('img').attr('src', '../images/header/header_normal.png');
+            $(this).find('img').attr('src', '${pageContext.request.contextPath}/images/header/header_normal.png');
 
         } else {
             $(this).addClass('clickhover');
             $(this).find('.seek_content').show();
-            $(this).find('img').attr('src', '../images/header/header_true.png');
+            $(this).find('img').attr('src', '${pageContext.request.contextPath}/images/header/header_true.png');
         }
     })
     $('.seek_content>div').click(function () {
@@ -265,7 +168,7 @@
         var text = $(this).html();
         $('.seek span').html(text);
         $(this).parent().hide();
-        $('.seek').find('img').attr('src', '../images/header/header_normal.png');
+        $('.seek').find('img').attr('src', '${pageContext.request.contextPath}/images/header/header_normal.png');
         $('.seek').blur();
 
     })
@@ -275,24 +178,24 @@
         $('.seek').removeClass('clickhover');
         $('.seek_content').hide();
 
-        $('.seek').find('img').attr('src', '../images/header/header_normal.png');
+        $('.seek').find('img').attr('src', '${pageContext.request.contextPath}/images/header/header_normal.png');
         console.log(1);
     })
     //头部hover
     $(".care").hover(function () {
-        $(this).attr('src', "../images/header/care1.png");
+        $(this).attr('src', "${pageContext.request.contextPath}/images/header/care1.png");
     }, function () {
-        $(this).attr('src', "../images/header/care.png");
+        $(this).attr('src', "${pageContext.request.contextPath}/images/header/care.png");
     });
     $(".order").hover(function () {
-        $(this).attr('src', "../images/header/order1.png");
+        $(this).attr('src', "${pageContext.request.contextPath}/images/header/order1.png");
     }, function () {
-        $(this).attr('src', "../images/header/order.png");
+        $(this).attr('src', "${pageContext.request.contextPath}/images/header/order.png");
     });
     $(".shopcar").hover(function () {
-        $(this).attr('src', "../images/header/shop_car1.png");
+        $(this).attr('src', "${pageContext.request.contextPath}/images/header/shop_car1.png");
     }, function () {
-        $(this).attr('src', "../images/header/shop_car.png");
+        $(this).attr('src', "${pageContext.request.contextPath}/images/header/shop_car.png");
     });
 </script>
 </html>
