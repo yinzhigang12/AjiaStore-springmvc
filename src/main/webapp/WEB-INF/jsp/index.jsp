@@ -1,12 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
     <title>阿甲学子商城首页</title>
-    <link href="../css/index.css" rel="Stylesheet"/>
-    <link href="../css/animate.css" rel="Stylesheet"/>
-    <link rel="stylesheet" href="../css/slide.css"/>
+    <link href="${pageContext.request.contextPath}/css/index.css" rel="Stylesheet"/>
+    <link href="${pageContext.request.contextPath}/css/animate.css" rel="Stylesheet"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/slide.css"/>
 </head>
 <body>
 <!-- 页面顶部-->

@@ -54,10 +54,10 @@ public class IndexController {
         return users;
     }
 
-    @RequestMapping("/index")
+ /*   @RequestMapping("/index")
     public String index() {
         return "redirect:http://www.baidu.com";
-    }
+    }*/
 
     @RequestMapping("/forward")
     public String forward(Model model) {

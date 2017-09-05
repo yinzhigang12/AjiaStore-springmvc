@@ -4,35 +4,40 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>404页面</title>
-    <link href="../css/header.css" rel="Stylesheet"/>
-    <link href="../css/footer.css" rel="Stylesheet"/>
-    <link href="../css/404.css" rel="Stylesheet"/>
+    <link href="${pageContext.request.contextPath}/css/header.css" rel="Stylesheet"/>
+    <link href="${pageContext.request.contextPath}/css/footer.css" rel="Stylesheet"/>
+    <link href="${pageContext.request.contextPath}/css/404.css" rel="Stylesheet"/>
 </head>
 <body>
 <!-- 页面顶部-->
 <header id="top">
     <div id="logo" class="lf">
-        <img class="animated jello" src="../images/header/logo.png" alt="logo"/>
+        <img class="animated jello" src="${pageContext.request.contextPath}/images/header/logo.png" alt="logo"/>
     </div>
     <div id="top_input" class="lf">
         <input id="input" type="text" placeholder="请输入您要搜索的内容"/>
         <div class="seek" tabindex="-1">
-            <div class="actived"><span>分类搜索</span> <img src="../images/header/header_normal.png" alt=""/></div>
+            <div class="actived"><span>分类搜索</span> <img
+                    src="${pageContext.request.contextPath}/images/header/header_normal.png" alt=""/></div>
             <div class="seek_content">
                 <div id="shcy">生活餐饮</div>
                 <div id="xxyp">学习用品</div>
                 <div id="srdz">私人订制</div>
             </div>
         </div>
-        <a href="" class="rt"><img id="search" src="../images/header/search.png" alt="搜索"/></a>
+        <a href="" class="rt"><img id="search" src="${pageContext.request.contextPath}/images/header/search.png"
+                                   alt="搜索"/></a>
     </div>
     <div class="rt">
         <ul class="lf">
-            <li><a href="myCollect.html" title="我的收藏"><img class="care" src="../images/header/care.png"
+            <li><a href="myCollect.html" title="我的收藏"><img class="care"
+                                                           src="${pageContext.request.contextPath}/images/header/care.png"
                                                            alt=""/></a><b>|</b></li>
-            <li><a href="myOrder.html" title="我的订单"><img class="order" src="../images/header/order.png"
+            <li><a href="myOrder.html" title="我的订单"><img class="order"
+                                                         src="${pageContext.request.contextPath}/images/header/order.png"
                                                          alt=""/></a><b>|</b></li>
-            <li><a href="cart.html" title="我的购物车"><img class="shopcar" src="../images/header/shop_car.png"
+            <li><a href="cart.html" title="我的购物车"><img class="shopcar"
+                                                       src="${pageContext.request.contextPath}/images/header/shop_car.png"
                                                        alt=""/></a><b>|</b></li>
             <li><a href="lookforward.html">帮助</a><b>|</b></li>
             <li><a href="login.html">登录</a></li>
@@ -52,9 +57,9 @@
 <div id="container">
     <div class="rightsidebar_box rt">
         <div class="sys_err">
-            <img src="../images/404/404_img1.png" alt=""/>
+            <img src="${pageContext.request.contextPath}/images/404/404_img1.png" alt=""/>
             <p>
-                <img src="../images/404/404_img2.png" alt=""/>页面找不到了！
+                <img src="${pageContext.request.contextPath}/images/404/404_img2.png" alt=""/>页面找不到了！
             </p>
             <span>快去看看别的吧！<b><a href="#">回首页&gt;&gt;</a></b></span>
             <br/>
@@ -69,25 +74,25 @@
             <div id="demo1" style="float:left"><!-- 第一个宽度显示 -->
                 <div class="detail_1 lf">
                     <div class="detail_img1">
-                        <img src="../images/recommend/recommend_img1.png" border="0">
+                        <img src="${pageContext.request.contextPath}/images/recommend/recommend_img1.png" border="0">
                     </div>
                     <p>ThinkPad New S2 (20GUA00QCD)13.3英寸超霸笔记本电脑</p>
                 </div>
                 <div class="detail_1 lf">
                     <div class="detail_img1">
-                        <img src="../images/recommend/recommend_img2.png" border="0">
+                        <img src="${pageContext.request.contextPath}/images/recommend/recommend_img2.png" border="0">
                     </div>
                     <p>戴尔 DELL燃7000 R1605S 超霸笔记本电脑</p>
                 </div>
                 <div class="detail_1 lf">
                     <div class="detail_img1">
-                        <img src="../images/recommend/recommend_img3.png" border="0">
+                        <img src="${pageContext.request.contextPath}/images/recommend/recommend_img3.png" border="0">
                     </div>
                     <p>戴尔(DELL)魔方15MF Pro-R2505TSS灵越超霸笔记本电脑</p>
                 </div>
                 <div class="detail_1 lf">
                     <div class="detail_img1">
-                        <img src="../images/recommend/recommend_img4.png" border="0">
+                        <img src="${pageContext.request.contextPath}/images/recommend/recommend_img4.png" border="0">
                     </div>
                     <p>联想(Lenovo) YOGA900 (YOGA4 PRO)多彩版超霸笔记本电脑</p>
                 </div>
@@ -103,22 +108,22 @@
 <!-- 品质保障，私人定制等-->
 <div id="foot_box">
     <div class="icon1 lf">
-        <img src="../images/footer/icon1.png" alt=""/>
+        <img src="${pageContext.request.contextPath}/images/footer/icon1.png" alt=""/>
 
         <h3>品质保障</h3>
     </div>
     <div class="icon2 lf">
-        <img src="../images/footer/icon2.png" alt=""/>
+        <img src="${pageContext.request.contextPath}/images/footer/icon2.png" alt=""/>
 
         <h3>私人定制</h3>
     </div>
     <div class="icon3 lf">
-        <img src="../images/footer/icon3.png" alt=""/>
+        <img src="${pageContext.request.contextPath}/images/footer/icon3.png" alt=""/>
 
         <h3>学员特供</h3>
     </div>
     <div class="icon4 lf">
-        <img src="../images/footer/icon4.png" alt=""/>
+        <img src="${pageContext.request.contextPath}/images/footer/icon4.png" alt=""/>
 
         <h3>专属特权</h3>
     </div>
@@ -127,8 +132,9 @@
 <div class="foot_bj">
     <div id="foot">
         <div class="lf">
-            <p class="footer1"><img src="../images/footer/logo.png" alt="" class=" footLogo"/></p>
-            <p class="footer2"><img src="../images/footer/footerFont.png" alt=""/></p>
+            <p class="footer1"><img src="${pageContext.request.contextPath}/images/footer/logo.png" alt=""
+                                    class=" footLogo"/></p>
+            <p class="footer2"><img src="${pageContext.request.contextPath}/images/footer/footerFont.png" alt=""/></p>
         </div>
         <div class="foot_left lf">
             <ul>
@@ -147,18 +153,18 @@
                 <li><a href="#">关于阿甲</a></li>
                 <li><a href="#">联系我们</a></li>
                 <li>
-                    <img src="../images/footer/wechat.png" alt=""/>
-                    <img src="../images/footer/sinablog.png" alt=""/>
+                    <img src="${pageContext.request.contextPath}/images/footer/wechat.png" alt=""/>
+                    <img src="${pageContext.request.contextPath}/images/footer/sinablog.png" alt=""/>
                 </li>
             </ul>
         </div>
         <div class="service">
             <p>阿甲商城客户端</p>
-            <img src="../images/footer/ios.png" class="lf">
-            <img src="../images/footer/android.png" alt="" class="lf"/>
+            <img src="${pageContext.request.contextPath}/images/footer/ios.png" class="lf">
+            <img src="${pageContext.request.contextPath}/images/footer/android.png" alt="" class="lf"/>
         </div>
         <div class="download">
-            <img src="../images/footer/erweima.png">
+            <img src="${pageContext.request.contextPath}/images/footer/erweima.png">
         </div>
         <!-- 页面底部-备案号 #footer -->
         <div class="record">
@@ -166,8 +172,8 @@
         </div>
     </div>
 </div>
-<script src="../js/jquery-3.1.1.min.js"></script>
-<script src="../js/index.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/index.js"></script>
 <!--图片轮播悬停进入详情页效果-->
 <script>
     var speed = 20;
