@@ -185,7 +185,7 @@
 </div>
 </body>
 <script src="../js/jquery-3.1.1.min.js"></script>
-<script src="../js/index.js"></script>
+<script src="../../js"></script>
 <script src="../js/jquery.page.js"></script>
 <script type="text/javascript" src="../js/order.js"></script>
 

@@ -10,40 +10,7 @@
 </head>
 <body>
 <!-- 页面顶部-->
-<header id="top">
-    <div id="logo" class="lf">
-        <img class="animated jello" src="${pageContext.request.contextPath}/images/header/logo.png" alt="logo"/>
-    </div>
-    <div id="top_input" class="lf">
-        <input id="input" type="text" placeholder="请输入您要搜索的内容"/>
-        <div class="seek" tabindex="-1">
-            <div class="actived"><span>分类搜索</span> <img
-                    src="${pageContext.request.contextPath}/images/header/header_normal.png" alt=""/></div>
-            <div class="seek_content">
-                <div id="shcy">生活餐饮</div>
-                <div id="xxyp">学习用品</div>
-                <div id="srdz">私人订制</div>
-            </div>
-        </div>
-        <a href="" class="rt"><img id="search" src="${pageContext.request.contextPath}/images/header/search.png"
-                                   alt="搜索"/></a>
-    </div>
-    <div class="rt">
-        <ul class="lf">
-            <li><a href="myCollect.html" title="我的收藏"><img class="care"
-                                                           src="${pageContext.request.contextPath}/images/header/care.png"
-                                                           alt=""/></a><b>|</b></li>
-            <li><a href="myOrder.html" title="我的订单"><img class="order"
-                                                         src="${pageContext.request.contextPath}/images/header/order.png"
-                                                         alt=""/></a><b>|</b></li>
-            <li><a href="cart.html" title="我的购物车"><img class="shopcar"
-                                                       src="${pageContext.request.contextPath}/images/header/shop_car.png"
-                                                       alt=""/></a><b>|</b></li>
-            <li><a href="lookforward.html">帮助</a><b>|</b></li>
-            <li><a href="login.html">登录</a></li>
-        </ul>
-    </div>
-</header>
+<jsp:include page="commons/header.jsp"></jsp:include>
 <!-- nav主导航-->
 <nav id="nav">
     <ul>
@@ -129,49 +96,7 @@
     </div>
 </div>
 <!-- 页面底部-->
-<div class="foot_bj">
-    <div id="foot">
-        <div class="lf">
-            <p class="footer1"><img src="${pageContext.request.contextPath}/images/footer/logo.png" alt=""
-                                    class=" footLogo"/></p>
-            <p class="footer2"><img src="${pageContext.request.contextPath}/images/footer/footerFont.png" alt=""/></p>
-        </div>
-        <div class="foot_left lf">
-            <ul>
-                <li><a href="#"><h3>买家帮助</h3></a></li>
-                <li><a href="#">新手指南</a></li>
-                <li><a href="#">服务保障</a></li>
-                <li><a href="#">常见问题</a></li>
-            </ul>
-            <ul>
-                <li><a href="#"><h3>商家帮助</h3></a></li>
-                <li><a href="#">商家入驻</a></li>
-                <li><a href="#">商家后台</a></li>
-            </ul>
-            <ul>
-                <li><a href="#"><h3>关于我们</h3></a></li>
-                <li><a href="#">关于阿甲</a></li>
-                <li><a href="#">联系我们</a></li>
-                <li>
-                    <img src="${pageContext.request.contextPath}/images/footer/wechat.png" alt=""/>
-                    <img src="${pageContext.request.contextPath}/images/footer/sinablog.png" alt=""/>
-                </li>
-            </ul>
-        </div>
-        <div class="service">
-            <p>阿甲商城客户端</p>
-            <img src="${pageContext.request.contextPath}/images/footer/ios.png" class="lf">
-            <img src="${pageContext.request.contextPath}/images/footer/android.png" alt="" class="lf"/>
-        </div>
-        <div class="download">
-            <img src="${pageContext.request.contextPath}/images/footer/erweima.png">
-        </div>
-        <!-- 页面底部-备案号 #footer -->
-        <div class="record">
-            &copy;2017 阿甲集团有限公司 版权所有 京ICP证xxxxxxxxxxx
-        </div>
-    </div>
-</div>
+<jsp:include page="commons/footer.jsp"></jsp:include>
 <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/index.js"></script>
 <!--图片轮播悬停进入详情页效果-->

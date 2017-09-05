@@ -311,7 +311,7 @@
 </div>
 </body>
 <script type="text/javascript" src="../js/jquery.min.js"></script>
-<script src="../js/index.js"></script>
+<script src="../../js"></script>
 <script src="../js/jquery.page.js"></script>
 <script type="text/javascript" src="../js/order.js"></script>
 <script type="text/javascript" src="../js/personal.js"></script>

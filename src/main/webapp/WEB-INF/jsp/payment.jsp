@@ -175,7 +175,7 @@
     </div>
 </div>
 <script src="../js/jquery-3.1.1.min.js"></script>
-<script src="../js/index.js"></script>
+<script src="../../js"></script>
 <script>
     $("#count_bar .okPay").css("display", "none");
     $("#dnBank>ul>li img").click(function () {

@@ -1,10 +1,9 @@
 package com.ajiatech.yzg.controller;
 
 import com.ajiatech.yzg.common.utils.JsonUtils;
-import com.ajiatech.yzg.pojo.AjiaItem;
-import com.ajiatech.yzg.pojo.AjiaItemParamItem;
-import com.ajiatech.yzg.pojo.GroupParam;
+import com.ajiatech.yzg.pojo.*;
 import com.ajiatech.yzg.service.AjiaItemParamItemService;
+import com.ajiatech.yzg.service.AjiaItemParamService;
 import com.ajiatech.yzg.service.AjiaItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +19,8 @@ public class ItemController {
     private AjiaItemService itemService;
     @Autowired
     private AjiaItemParamItemService itemParamItemService;
+    @Autowired
+    private AjiaItemParamService itemParamService;
 
     @RequestMapping("/toItemInfo/{itemId}")
     public String toItemInfo(Model model, @PathVariable(required = true, name = "itemId") Long itemId) {
@@ -27,8 +28,20 @@ public class ItemController {
         model.addAttribute("item", item);
         AjiaItemParamItem ipi = itemParamItemService.findByItemId(itemId);
         String json = ipi.getParamData();
+
         List<GroupParam> groupParams = JsonUtils.jsonToList(json, GroupParam.class);
-        System.out.println(groupParams);
+        if (groupParams != null && groupParams.size() > 0) {
+            List<Params> params = groupParams.get(1).getParams();
+            model.addAttribute("picParams", params);
+        }
+
+        AjiaItemParam ip = itemParamService.findById(ipi.getItemParamId());
+        json = ip.getParamData();
+        List<GroupParam> allGroupParams = JsonUtils.jsonToList(json, GroupParam.class);
+        if (allGroupParams != null && allGroupParams.size() > 0) {
+            List<Params> allParams = allGroupParams.get(0).getParams();
+            model.addAttribute("allParams", allParams);
+        }
         return "product_details";
     }
 }

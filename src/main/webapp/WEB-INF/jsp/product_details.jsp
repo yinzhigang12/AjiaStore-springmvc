@@ -343,7 +343,7 @@
     </div>
 </div>
 <script src="../js/jquery-3.1.1.min.js"></script>
-<script src="../js/index.js"></script>
+<script src="../../js"></script>
 <!--图片轮播悬停进入详情页效果-->
 <script>
     var speed = 20;

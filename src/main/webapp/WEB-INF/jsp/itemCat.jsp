@@ -358,7 +358,7 @@
     </div>
 </div>
 <script src="../js/jquery-3.1.1.min.js"></script>
-<script src="../js/index.js"></script>
+<script src="../../js"></script>
 <script src="../js/slide.js"></script>
 <script>
     $('.ck-slide').ckSlide({
