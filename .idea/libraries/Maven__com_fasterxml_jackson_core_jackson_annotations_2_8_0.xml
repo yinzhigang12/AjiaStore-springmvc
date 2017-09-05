@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.8.0">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.8.0/jackson-annotations-2.8.0.jar!/" />
+      <root url="file://D:/apache-tomcat-9.0.0" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.8.0/jackson-annotations-2.8.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.8.0/jackson-annotations-2.8.0-sources.jar!/" />
+      <root url="file://D:/apache-tomcat-9.0.0/webapps/docs/appdev/sample/src" />
+      <root url="file://D:/apache-tomcat-9.0.0/webapps/examples/WEB-INF/classes" />
+      <root url="file://D:/apache-tomcat-9.0.0/webapps/examples/WEB-INF/jsp/applet" />
+      <root url="file://D:/apache-tomcat-9.0.0/webapps/examples/jsp/plugin/applet" />
+    </SOURCES>
+  </library>
+</component>

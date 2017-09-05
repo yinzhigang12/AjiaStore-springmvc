@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       		http://www.springframework.org/schema/beans/spring-beans.xsd 
+       		http://www.springframework.org/schema/context 
+       		http://www.springframework.org/schema/context/spring-context.xsd 
+       		http://www.springframework.org/schema/mvc
+       		http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!-- 配置扫描的包 -->
+    <context:component-scan base-package="com.ajiatech.yzg.controller"/>
+    <!-- 注册HandlerMapper、HandlerAdapter两个映射类 -->
+    <mvc:annotation-driven/>
+    <!-- 访问静态资源 -->
+    <mvc:default-servlet-handler/>
+
+    <!-- 配置对象转换器，如果Controller的方法直接返回java对象， springmvc将会使用jackson的jar包转成json字符串输出给客户端 -->
+    <mvc:annotation-driven>
+        <mvc:message-converters register-defaults="true">
+            <bean id="mappingJacksonHttpMessageConverter"
+                  class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="supportedMediaTypes" value="text/html;charset=UTF-8"/>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <!-- 视图解析器 Controller处理完毕后将会转发到相应位置 prefix前缀 suffix后缀 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="defaultErrorView" value="500"></property>
+        <property name="exceptionAttribute" value="ex"></property>
+        <!--<property name="exceptionMappings">
+            <props>
+                <prop key="com.ajiatech.yzg.exception.ExceptionFor404">404</prop>
+                <prop key="com.ajiatech.yzg.exception.ExceptionFor500">500</prop>
+            </props>
+        </property>-->
+    </bean>
+</beans>
