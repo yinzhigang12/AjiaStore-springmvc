@@ -177,13 +177,12 @@
 
 .right_detail > P > .avenge {
     display: inline-block;
-    width: 86px;
     height: 36px;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
     border: 1px solid #666666;
     margin-right: 3px;
-    padding: 10px 0px;
+    padding: 10px 5px;
     text-align: center;
     vertical-align: middle;
     box-sizing: border-box;

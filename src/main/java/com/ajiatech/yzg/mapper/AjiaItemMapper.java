@@ -29,4 +29,6 @@ public interface AjiaItemMapper {
     int updateByPrimaryKeySelective(AjiaItem record);
 
     int updateByPrimaryKey(AjiaItem record);
+
+    List<AjiaItem> selectMatchItems(AjiaItem item);
 }

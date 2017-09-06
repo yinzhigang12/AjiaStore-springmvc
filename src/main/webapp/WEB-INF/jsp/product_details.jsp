@@ -57,13 +57,23 @@
             <span class="connect">联系客服</span><img class="gif"
                                                   src="${pageContext.request.contextPath}/images/product_detail/kefuf.gif">
         </p>
+        <c:forEach items="${myParams}" var="myParam">
+            <c:if test='${myParam.key == "颜色"}'>
+                <c:set var="myColor" value="${myParam.values[0]}"></c:set>
+            </c:if>
+            <c:if test='${myParam.key == "型号"}'>
+                <c:set var="myModel" value="${myParam.values[0]}"></c:set>
+            </c:if>
+        </c:forEach>
+
         <c:forEach items="${allParams}" var="aParam">
             <c:if test='${aParam.key=="颜色"}'>
                 <!-- 颜色-->
                 <p class="style" id="choose_color">
                     <s class="color">颜色：</s>
                     <c:forEach items="${aParam.values}" var="val">
-                        <input type="button" class="i1" value="${val}" title="${val}"/>
+                        <input type="button" class='i1 ${val == myColor ? "borderChange":""}' value="${val}"
+                               title="${val}"/>
                     </c:forEach>
                 </p>
             </c:if>
@@ -72,7 +82,7 @@
                 <p>
                     <s>规格：</s>
                     <c:forEach items="${aParam.values}" var="val">
-                        <span class="avenge">${val}</span>
+                        <span class='avenge ${val == myModel ? "borderChange":""}'>${val}</span>
                     </c:forEach>
                 </p>
             </c:if>
@@ -429,7 +439,11 @@
                 }
                 //规格选择
                 var norms = $(this).html();
-                console.log(norms)
+                console.log(norms);
+
+                var brand = '${item.brand}';
+                getPro();
+                loadMatchItem(brand, color, norms);
             })
         })
         //颜色选择
@@ -440,7 +454,11 @@
                     $(this).siblings().removeClass("borderChange")
                 }
                 var color = $(this).val();
-                console.log(color)
+                console.log(color);
+
+                var brand = '${item.brand}';
+                getPro();
+                loadMatchItem(brand, color, norms);
             })
         })
         //数量选择
@@ -467,6 +485,14 @@
 //             window.location.href = url;
         })
     })
+
+    function loadMatchItem(brand, color, norms) {
+        var url = "/item/getMatchItemId.html";
+        var itemId = ${item.id};
+        $.post(url, {brand: brand, color: color, model: norms}, function (data) {
+            window.location.href = "/toItemInfo/" + data.data + ".html";
+        }, 'json');
+    }
 </script>
 <!--图片效果-->
 <script>
