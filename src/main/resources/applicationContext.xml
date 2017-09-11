@@ -7,6 +7,8 @@
     		http://www.springframework.org/schema/context 
     		http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 
+	<!--扫描properties配置文件-->
+	<context:property-placeholder location="classpath:properties/*.properties"/>
 	<!-- 扫描所有类 -->
 	<context:component-scan base-package="com.ajiatech">
 		<!-- 除去带有@Controller注解的类  因为这些类将会被springmvc扫描 -->
@@ -28,6 +30,7 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="jdbcDataSource"/>
 		<property name="mapperLocations" value="classpath:com/ajiatech/yzg/mapper/*.xml"></property>
+		<property name="configLocation" value="classpath:mybatis/SqlPagePlugin.xml"></property>
 	</bean>
 
 	<!-- spring管理所有的mapper接口 -->

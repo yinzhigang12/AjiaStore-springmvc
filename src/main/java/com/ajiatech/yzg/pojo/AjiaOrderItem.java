@@ -17,6 +17,20 @@ public class AjiaOrderItem {
 
     private String picPath;
 
+    public AjiaOrderItem() {
+    }
+
+    public AjiaOrderItem(String id, String itemId, String orderId, Integer num, String title, Double price, Double totalFee, String picPath) {
+        this.id = id;
+        this.itemId = itemId;
+        this.orderId = orderId;
+        this.num = num;
+        this.title = title;
+        this.price = price;
+        this.totalFee = totalFee;
+        this.picPath = picPath;
+    }
+
     public String getId() {
         return id;
     }

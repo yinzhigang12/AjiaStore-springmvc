@@ -20,6 +20,12 @@ public class IDUtils {
         return id;
     }
 
+    public static String genOrderId() {
+        Random r = new Random();
+        int num = r.nextInt(9000000) + 1000000;
+        return num + "" + System.currentTimeMillis();
+    }
+
     public static void main(String[] args) {
         for (int i = 0; i < 100; i++) {
             System.out.println(genItemId());

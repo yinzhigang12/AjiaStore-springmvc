@@ -15,40 +15,7 @@
 </head>
 <body>
 <!-- 页面顶部-->
-<header id="top">
-    <div id="logo" class="lf">
-        <img class="animated jello" src="${pageContext.request.contextPath}/images/header/logo.png" alt="logo"/>
-    </div>
-    <div id="top_input" class="lf">
-        <input id="input" type="text" placeholder="请输入您要搜索的内容"/>
-        <div class="seek" tabindex="-1">
-            <div class="actived"><span>分类搜索</span> <img
-                    src="${pageContext.request.contextPath}/images/header/header_normal.png" alt=""/></div>
-            <div class="seek_content">
-                <div id="shcy">生活餐饮</div>
-                <div id="xxyp">学习用品</div>
-                <div id="srdz">私人订制</div>
-            </div>
-        </div>
-        <a href="" class="rt"><img id="search" src="${pageContext.request.contextPath}/images/header/search.png"
-                                   alt="搜索"/></a>
-    </div>
-    <div class="rt">
-        <ul class="lf">
-            <li><a href="myCollect.html" title="我的收藏"><img class="care"
-                                                           src="${pageContext.request.contextPath}/images/header/care.png"
-                                                           alt=""/></a><b>|</b></li>
-            <li><a href="myOrder.html" title="我的订单"><img class="order"
-                                                         src="${pageContext.request.contextPath}/images/header/order.png"
-                                                         alt=""/></a><b>|</b></li>
-            <li><a href="cart.html" title="我的购物车"><img class="shopcar"
-                                                       src="${pageContext.request.contextPath}/images/header/shop_car.png"
-                                                       alt=""/></a><b>|</b></li>
-            <li><a href="lookforward.html">帮助</a><b>|</b></li>
-            <li><a href="login.html">登录</a></li>
-        </ul>
-    </div>
-</header>
+<jsp:include page="commons/header.jsp"></jsp:include>
 <div id="navlist">
     <ul>
         <li class="navlist_gray_left"></li>
@@ -69,8 +36,8 @@
     <div id="container" class="clearfix">
         <!-- 支付订单信息-->
         <div class="pay_info">
-            <b>支付金额：<i>4800元</i></b><input type="hidden" name="payment" value="0.01"/>
-            <span>支付订单：324235435 收款方：阿甲商城</span><input type="hidden" name="orderId"/>
+            <b>支付金额：<i>${order.payment}</i></b><input type="hidden" name="payment" value="0.01"/>
+            <span>支付订单：${order.orderId} 收款方：阿甲商城</span><input type="hidden" name="orderId"/>
         </div>
         <!--支付方式-->
         <div id="pay_type">

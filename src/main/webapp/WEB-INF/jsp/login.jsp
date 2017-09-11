@@ -23,7 +23,7 @@
             <div class="txt">
                 <p>登录学子商城
                     <span>
-                        <a href="register.html">新用户注册</a>
+                        <a href="/toRegister.html">新用户注册</a>
                     </span>
                 </p>
                 <div class="text">
@@ -91,7 +91,7 @@
         //异步提交请求，进行验证
         $.ajax({
             type: 'POST',
-            url: 'data/1_login.php',
+            url: '/index.html',
             data: inputData,
             success: function (txt, msg, xhr) {
                 if (txt == 'ok') {  //登录成功

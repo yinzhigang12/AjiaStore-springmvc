@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -26,41 +28,93 @@
             <dt onClick="changeImage()">我的订单
                 <img src="${pageContext.request.contextPath}/images/myOrder/myOrder2.png">
             </dt>
-            <dd class="first_dd"><a href="#">全部订单</a></dd>
-            <dd>
-                <a href="#">
-                    待付款
-                    <span><!--待付款数量--></span>
+            <dd class="first_dd">
+                <a href="/order/toMyOrder.html?code=all">
+                    <c:choose>
+                        <c:when test='${code=="all"}'>
+                            <span>全部订单</span>
+                            <span>${pageInfo.total}</span>
+                        </c:when>
+                        <c:otherwise>
+                            全部订单
+                        </c:otherwise>
+                    </c:choose>
                 </a>
             </dd>
             <dd>
-                <a href="#">
-                    待收货
-                    <span><!--待收货数量-->1</span>
+                <a href="/order/toMyOrder.html?code=wait_pay">
+                    <c:choose>
+                        <c:when test='${code=="wait_pay"}'>
+                            <span>待付款</span>
+                            <span>${pageInfo.total}</span>
+                        </c:when>
+                        <c:otherwise>
+                            待付款
+                        </c:otherwise>
+                    </c:choose>
                 </a>
             </dd>
             <dd>
-                <a href="#">
-                    待评价<span><!--待评价数量--></span>
+                <a href="/order/toMyOrder.html?code=wait_send">
+                    <c:choose>
+                        <c:when test='${code="wait_send"}'>
+                            <span>待发货</span>
+                            <span>${pageInfo.total}</span>
+                        </c:when>
+                        <c:otherwise>
+                            待发货
+                        </c:otherwise>
+                    </c:choose>
                 </a>
             </dd>
             <dd>
-                <a href="#">退货退款</a>
+                <a href="/order/toMyOrder.html?code=wait_get">
+                    <c:choose>
+                        <c:when test='${code=="wait_get"}'>
+                            <span>待收货</span>
+                            <span>${pageInfo.total}</span>
+                        </c:when>
+                        <c:otherwise>
+                            待收货
+                        </c:otherwise>
+                    </c:choose>
+                </a>
+            </dd>
+            <dd>
+                <a href="/order/toMyOrder.html?code=wait_ass">
+                    <c:choose>
+                        <c:when test='${code=="wait_ass"}'>
+                            <span>待评价</span>
+                            <span>${pageInfo.total}</span>
+                        </c:when>
+                        <c:otherwise>
+                            待评价
+                        </c:otherwise>
+                    </c:choose>
+                </a>
             </dd>
         </dl>
         <dl class="footMark">
-            <dt onClick="changeImage()">我的优惠卷<img src="${pageContext.request.contextPath}/images/myOrder/myOrder1.png">
+            <dt onClick="changeImage()">
+                我的优惠卷<img src="${pageContext.request.contextPath}/images/myOrder/myOrder1.png">
             </dt>
         </dl>
         <dl class="address">
-            <dt>收货地址<img src="${pageContext.request.contextPath}/images/myOrder/myOrder1.png"></dt>
+            <dt>
+                收货地址<img src="${pageContext.request.contextPath}/images/myOrder/myOrder1.png">
+            </dt>
             <dd><a href="addressAdmin.html">地址管理</a></dd>
         </dl>
         <dl class="count_managment">
-            <dt onClick="changeImage()">帐号管理<img src="${pageContext.request.contextPath}/images/myOrder/myOrder1.png">
+            <dt onClick="changeImage()">
+                帐号管理<img src="${pageContext.request.contextPath}/images/myOrder/myOrder1.png">
             </dt>
-            <dd class="first_dd"><a href="personage.html">我的信息</a></dd>
-            <dd><a href="personal_password.html">安全管理</a></dd>
+            <dd class="first_dd">
+                <a href="personage.html">我的信息</a>
+            </dd>
+            <dd>
+                <a href="personal_password.html">安全管理</a>
+            </dd>
         </dl>
     </div>
     -->
@@ -78,172 +132,95 @@
                 <th width="92">操作</th>
             </tr>
         </table>
-        <!-- 订单列表项 -->
-        <div id="orderItem">
-            <p class="orderItem_title">
+
+        <c:forEach items="${orderVos}" var="orderVo">
+            <!-- 订单列表项 -->
+            <div id="orderItem">
+                <p class="orderItem_title">
                  <span id="order_id">
-                     &nbsp;&nbsp;订单编号:<a href="#">12345678910</a>
+                     &nbsp;&nbsp;订单编号:<a href="#">${orderVo.order.orderId}</a>
                  </span>
-                &nbsp;&nbsp;成交时间：2016-01-04 18:00&nbsp;&nbsp;
-                <span>
+                    &nbsp;&nbsp;成交时间：<fmt:formatDate value="${orderVo.order.createTime}" pattern="yyyy-MM-dd HH:mm"/>&nbsp;&nbsp;
+                    <span>
                      <a href="#" class="servie">
                         联系客服<img src="${pageContext.request.contextPath}/images/myOrder/kefuf.gif"/>
                       </a>
+                        <c:if test="${orderVo.order.status==1}">
+                            <a style="margin-left:5px;" href="/order/payment.html?orderId=${orderVo.order.orderId}"
+                               class="rt button button1">去付款</a>
+                            <a style="margin-left:5px;" href="/order/cancel.html?orderId=${orderVo.order.orderId}"
+                               class="rt button button1" onclick='return confirm("确认取消吗？");'>取消订单</a>
+                        </c:if>
+                        <c:if test="${orderVo.order.status==2|| orderVo.order.status== 3}">
+                            <a style="margin-left:5px;" href="#" class="rt button button1">退款</a>
+                        </c:if>
+                        <c:if test="${orderVo.order.status == 8}">
+                            <a style="margin-left:5px;" onclick='return confirm("确认删除吗？")'
+                               href="/order/delete.html?orderId=${orderVo.order.orderId}"
+                               class="rt button button1">删除订单</a>
+                        </c:if>
                  </span>
-            </p>
-        </div>
-        <div id="orderItem_detail">
-            <ul>
-                <li class="product">
-                    <b><a href="#"><img
-                            src="${pageContext.request.contextPath}/images/myOrder/product_img1.png"/></a></b>
-                    <b class="product_name lf">
-                        <a href="">联想(Lenovo)YoGA5 PRO 标配版电脑 (I5-7200U 8G 512G SSD IPS)</a>
-                        <br/>
-                    </b>
-                    <b class="product_color ">
-                        颜色：深空灰
-                    </b>
-                </li>
-                <li class="unit_price">
-                    专属价
-                    <br/>
-                    ￥8800
-                </li>
-                <li class="count">
-                    1件
-                </li>
-                <li class="sale_support">
-                    退款/退货
-                    <br/>
-                    我要维权
-                </li>
-                <li class=" payments_received">
-                    ￥1222.00
-                </li>
-                <li class="trading_status">
-                    <img src="${pageContext.request.contextPath}/images/myOrder/car.png" alt=""/>已发货
-                    <br/>
-                    <a href="orderInfo.html">订单详情</a>
-                    <br/>
-                    <a href="#" class="view_logistics">查看物流</a>
-                </li>
-                <li class="operate">
-                    <a href="#">确认收货</a>
-                </li>
-            </ul>
-        </div>
+                </p>
+            </div>
+            <div id="orderItem_detail">
+                <c:forEach items="${orderVo.itemVos}" var="itemVo">
+                    <ul>
+                        <li class="product">
+                            <b><a href="/toItemInfo/${itemVo.item.itemId}.html">
+                                <img style="width:84px;height:84px;" src="${itemVo.item.picPath}"/>
+                            </a></b>
+                            <b class="product_name lf">
+                                <a href="/toItemInfo/${itemVo.item.itemId}.html">${itemVo.item.title}</a>
+                                <br/>
+                            </b>
+                            <c:forEach items="${itemVo.params}" var="mParam">
+                                <b class="product_color ">
+                                        ${mParam.key}:${mParam.values[0]}
+                                </b>
+                            </c:forEach>
 
-        <div id="orderItem">
-            <p class="orderItem_title">
-                 <span id="order_id">
-                     &nbsp;&nbsp;订单编号:<a href="#">12345678910</a>
-                 </span>
-                &nbsp;&nbsp;成交时间：2016-01-04 18:00&nbsp;&nbsp;
-                <span>
-                     <a href="#" class="servie">
-                         联系客服<img src="${pageContext.request.contextPath}/images/myOrder/kefuf.gif"/>
-                     </a>
-                 </span>
-            </p>
-        </div>
-        <div id="orderItem_detail">
-            <ul>
-                <li class="product">
-                    <b><a href="#"><img
-                            src="${pageContext.request.contextPath}/images/myOrder/product_img1.png"/></a></b>
-                    <b class="product_name lf">
-                        <a href="">联想(Lenovo)YoGA5 PRO 标配版电脑 (I5-7200U 8G 512G SSD IPS)</a>
-                        <br/>
-                    </b>
-                    <b class="product_color ">
-                        颜色：深空灰
-                    </b>
-                </li>
-                <li class="unit_price">
-                    专属价
-                    <br/>
-                    ￥8800
-                </li>
-                <li class="count">
-                    1件
-                </li>
-                <li class="sale_support">
-                    退款/退货
-                    <br/>
-                    我要维权
-                </li>
-                <li class=" payments_received">
-                    ￥1222.00
-                </li>
-                <li class="trading_status">
-                    <img src="${pageContext.request.contextPath}/images/myOrder/car.png" alt=""/>已发货
-                    <br/>
-                    <a href="orderInfo.html">订单详情</a>
-                    <br/>
-                    <a href="#" class="view_logistics">查看物流</a>
-                </li>
-                <li class="operate">
-                    <a href="#">确认收货</a>
-                </li>
-            </ul>
-        </div>
-
-        <div id="orderItem">
-            <p class="orderItem_title">
-                 <span id="order_id">
-                     &nbsp;&nbsp;订单编号:<a href="#">12345678910</a>
-                 </span>
-                &nbsp;&nbsp;成交时间：2016-01-04 18:00&nbsp;&nbsp;
-                <span>
-                     <a href="#" class="servie">
-                         联系客服<img src="${pageContext.request.contextPath}/images/myOrder/kefuf.gif"/>
-                     </a>
-                 </span>
-            </p>
-        </div>
-        <div id="orderItem_detail">
-            <ul>
-                <li class="product">
-                    <b><a href="#"><img
-                            src="${pageContext.request.contextPath}/images/myOrder/product_img1.png"/></a></b>
-                    <b class="product_name lf">
-                        <a href="">联想(Lenovo)YoGA5 PRO 标配版电脑 (I5-7200U 8G 512G SSD IPS)</a>
-                        <br/>
-                    </b>
-                    <b class="product_color ">
-                        颜色：深空灰
-                    </b>
-                </li>
-                <li class="unit_price">
-                    专属价
-                    <br/>
-                    ￥8800
-                </li>
-                <li class="count">
-                    1件
-                </li>
-                <li class="sale_support">
-                    退款/退货
-                    <br/>
-                    我要维权
-                </li>
-                <li class=" payments_received">
-                    ￥1222.00
-                </li>
-                <li class="trading_status">
-                    <img src="${pageContext.request.contextPath}/images/myOrder/car.png" alt=""/>已发货
-                    <br/>
-                    <a href="orderInfo.html">订单详情</a>
-                    <br/>
-                    <a href="#" class="view_logistics">查看物流</a>
-                </li>
-                <li class="operate">
-                    <a href="#">确认收货</a>
-                </li>
-            </ul>
-        </div>
-
+                        </li>
+                        <li class="unit_price">
+                            专属价
+                            <br/>
+                            ￥${itemVo.item.price}
+                        </li>
+                        <li class="count">
+                                ${itemVo.item.num}件
+                        </li>
+                        <li class="sale_support" style="line-height:80px;">
+                                ${orderVo.order.shippingName}
+                        </li>
+                        <li class=" payments_received">
+                            ￥${itemVo.item.totalFee}
+                        </li>
+                        <li class="trading_status" style="line-height:80px;">
+                            <c:if test="${orderVo.order.status==1}">
+                                待付款
+                            </c:if>
+                            <c:if test="${orderVo.order.status==3 || orderVo.order.status==2}">
+                                待发货
+                            </c:if>
+                            <c:if test="${orderVo.order.status==4 || orderVo.order.status==5}">
+                                待收货
+                            </c:if>
+                            <c:if test="${orderVo.order.status ==6}">
+                                待评价
+                            </c:if>
+                            <c:if test="${orderVo.order.status==7}">
+                                交易完成
+                            </c:if>
+                            <c:if test="${orderVo.order.status == 8}">
+                                订单关闭
+                            </c:if>
+                        </li>
+                        <li class="operate">
+                            ---
+                        </li>
+                    </ul>
+                </c:forEach>
+            </div>
+        </c:forEach>
 
         <!--分页器-->
         <div class="tcdPageCode"></div>

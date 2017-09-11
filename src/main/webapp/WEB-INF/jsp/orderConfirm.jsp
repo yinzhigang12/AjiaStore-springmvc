@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -11,40 +13,8 @@
 </head>
 <body>
 <!-- 页面顶部-->
-<header id="top">
-    <div id="logo" class="lf">
-        <img class="animated jello" src="${pageContext.request.contextPath}/images/header/logo.png" alt="logo"/>
-    </div>
-    <div id="top_input" class="lf">
-        <input id="input" type="text" placeholder="请输入您要搜索的内容"/>
-        <div class="seek" tabindex="-1">
-            <div class="actived"><span>分类搜索</span> <img
-                    src="${pageContext.request.contextPath}/images/header/header_normal.png" alt=""/></div>
-            <div class="seek_content">
-                <div id="shcy">生活餐饮</div>
-                <div id="xxyp">学习用品</div>
-                <div id="srdz">私人订制</div>
-            </div>
-        </div>
-        <a href="" class="rt"><img id="search" src="${pageContext.request.contextPath}/images/header/search.png"
-                                   alt="搜索"/></a>
-    </div>
-    <div class="rt">
-        <ul class="lf">
-            <li><a href="myCollect.html" title="我的收藏"><img class="care"
-                                                           src="${pageContext.request.contextPath}/images/header/care.png"
-                                                           alt=""/></a><b>|</b></li>
-            <li><a href="myOrder.html" title="我的订单"><img class="order"
-                                                         src="${pageContext.request.contextPath}/images/header/order.png"
-                                                         alt=""/></a><b>|</b></li>
-            <li><a href="cart.html" title="我的购物车"><img class="shopcar"
-                                                       src="${pageContext.request.contextPath}/images/header/shop_car.png"
-                                                       alt=""/></a><b>|</b></li>
-            <li><a href="lookforward.html">帮助</a><b>|</b></li>
-            <li><a href="login.html">登录</a></li>
-        </ul>
-    </div>
-</header>
+<jsp:include page="commons/header.jsp"></jsp:include>
+
 <div id="navlist">
     <ul>
         <li class="navlist_blue_left"></li>
@@ -65,41 +35,20 @@
     <!--收货地址-->
     <div class="adress_choice">
         <p>收货人信息<span class="rt" id="choose">新增收货地址</span></p>
-        <div id="addresId1" class="base_select">
-            <i class="address_name">
-                刘冉北京
-            </i>
-            <i class="user_address">
-                北京市 海淀区 大钟寺123号 139366668888
-            </i>
-            <i class="user_site rt">
-                设为默认地址
-            </i>
-        </div>
-        <div id="addresId2" class="base">
-            <i class="address_name">
-                刘冉北京
-            </i>
-            <i class="user_address">
-                北京市 海淀区 大钟寺123号 139366668888
-            </i>
+        <c:forEach items="${shippings}" var="shipping">
+            <div id="addresId1" class='${shipping.isDefault ? "base_select":"base"}'>
+                <i class="address_name">
+                        ${shipping.receiverName} ${shipping.receiverState}
+                </i>
+                <i class="user_address">
+                        ${shipping.receiverCity} ${shipping.receiverDistrict} ${shipping.receiverAddress} ${shipping.receiverPhone}
+                </i>
+                <i class="user_site rt">
+                    设为默认地址
+                </i>
+            </div>
+        </c:forEach>
 
-            <i class="user_site rt">
-                设为默认地址
-            </i>
-        </div>
-        <div id="addresId3" class="base">
-            <i class="address_name">
-                刘冉北京
-            </i>
-            <i class="user_address">
-                北京市 海淀区 大钟寺123号 139366668888
-            </i>
-
-            <i class="user_site rt">
-                设为默认地址
-            </i>
-        </div>
         <a id="more" href="javascript:void(0);">
             更多地址 &gt;&gt;
         </a>
@@ -114,26 +63,33 @@
                 <li class="p_count">数量</li>
                 <li class="p_tPrice">金额</li>
             </ul>
-            <ul class="item_detail">
-                <li class="p_info">
-                    <b><img src="${pageContext.request.contextPath}/images/orderConfirm/product_simg1.png"/></b>
+            <c:forEach items="${vos}" var="vo">
+                <ul class="item_detail">
+                    <li class="p_info">
+                        <b><img style="width:84px;height:84px;" src="${vo.item.image}"/></b>
 
-                    <b class="product_name lf">
-                        联想(Lenovo)YoGA5 PRO 标配版电脑 (I5-7200U 8G 512G SSD IPS)
-                    </b>
-                    <br/>
-                    <span class="product_color ">
-                   颜色：深空灰
-                </span>
-                </li>
-                <li class="p_price">
-                    <i>阿甲专属价</i>
-                    <br/>
-                    <span class="pro_price">￥<span class="ppp_price">4800.00</span></span>
-                </li>
-                <li class="p_count">X<span>1</span></li>
-                <li class="p_tPrice">￥<span></span></li>
-            </ul>
+                        <b class="product_name lf">
+                                ${vo.item.title}
+                        </b>
+                        <br/><br/><br/>
+                        <c:forEach items="${vo.params}" var="mParam">
+                            <span class="product_color ">
+                               ${mParam.key}: ${mParam.values[0]}
+                            </span>
+                            <br/>
+                        </c:forEach>
+
+                    </li>
+                    <li class="p_price">
+                        <i>阿甲专属价</i>
+                        <br/>
+                        <span class="pro_price">￥<span class="ppp_price">${vo.item.price}</span></span>
+                    </li>
+                    <li class="p_count">X<span>${vo.cartItem.num}</span></li>
+                    <li class="p_tPrice">￥<span>${vo.item.price * vo.cartItem.num}</span></li>
+                </ul>
+            </c:forEach>
+
         </div>
     </form>
     <!-- 结算条-->

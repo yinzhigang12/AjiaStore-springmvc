@@ -54,15 +54,31 @@ public class IndexController {
         return users;
     }
 
- /*   @RequestMapping("/index")
-    public String index() {
-        return "redirect:http://www.baidu.com";
-    }*/
+    @RequestMapping("/index")
+    @ResponseBody
+    public String index(@RequestParam(required = true, name = "pwd") String name, String pwd) {
 
-    @RequestMapping("/forward")
-    public String forward(Model model) {
-        model.addAttribute("name", "张三三");
-        return "index";
+        return "ok:";
+    }
+
+    /**
+     * 跳转到注册界面
+     *
+     * @return
+     */
+    @RequestMapping("/toRegister")
+    public String toRegister() {
+        return "register";
+    }
+
+    /**
+     * 跳转到登录页面
+     *
+     * @return
+     */
+    @RequestMapping("/toLogin")
+    public String toLogin() {
+        return "login";
     }
 
 }

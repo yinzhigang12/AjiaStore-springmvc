@@ -25,7 +25,7 @@
                 <div class="txt">
                     <p>新用户注册
                         <span>
-              <a href="login.html">直接登录</a>
+              <a href="/toLogin.html">直接登录</a>
             </span>
                     </p>
                 </div>

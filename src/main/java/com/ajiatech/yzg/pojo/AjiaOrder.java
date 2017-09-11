@@ -39,6 +39,30 @@ public class AjiaOrder {
 
     private Integer buyerRate;
 
+    public AjiaOrder() {
+    }
+
+    public AjiaOrder(String orderId, Long userId, Long addId, Double payment, Integer paymentType, Double postFee, Integer status, Date createTime, Date updateTime, Date paymentTime, Date consignTime, Date endTime, Date closeTime, String shippingName, String shippingCode, String buyerMessage, String buyerNick, Integer buyerRate) {
+        this.orderId = orderId;
+        this.userId = userId;
+        this.addId = addId;
+        this.payment = payment;
+        this.paymentType = paymentType;
+        this.postFee = postFee;
+        this.status = status;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+        this.paymentTime = paymentTime;
+        this.consignTime = consignTime;
+        this.endTime = endTime;
+        this.closeTime = closeTime;
+        this.shippingName = shippingName;
+        this.shippingCode = shippingCode;
+        this.buyerMessage = buyerMessage;
+        this.buyerNick = buyerNick;
+        this.buyerRate = buyerRate;
+    }
+
     public String getOrderId() {
         return orderId;
     }

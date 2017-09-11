@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="AjiaStore-springmvc:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="AjiaStore-springmvc.war">
+      <element id="artifact" artifact-name="AjiaStore-springmvc:war exploded" />
+    </root>
+  </artifact>
+</component>

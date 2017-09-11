@@ -167,76 +167,7 @@
     </div>
     <div class="left lf">
         <div class="all">
-            <!--<p><img src="images_x/pin_logo.png" alt=""/></p>-->
-            <div id="parm">
-                <div id="specification_parameter">
-                    <p>
-                        规格参数
-                        <img src="${pageContext.request.contextPath}/images/product_detail/product_detail_icon_1.png"
-                             alt="" class="ys5"/>
-                    </p>
-                    <!--<img src="images_x/canshu.png" alt="" class="ys5"/>-->
-                </div>
-                <ul>
-                    <li><a href="#">商品名称：联想YOGA 710</a></li>
-                    <li><a href="#">系统：windows10</a></li>
-                    <li><a href="#">内存容量：8G</a></li>
-                    <li><a href="#">分辨率：全清高屏(1920*1080)</a></li>
-                    <li><a href="#">显卡型号：GT940M</a></li>
-                    <li><a href="#">处理器：Intel i7低功耗版</a></li>
-                    <li><a href="#">显存容量：2G</a></li>
-                    <li><a href="#">分类：清薄本</a></li>
-                    <li><a href="#">硬盘容量:256G固态</a></li>
-                </ul>
-            </div>
-            <div id="product_introduction">
-                <p>
-                    商品介绍
-                    <img src="${pageContext.request.contextPath}/images/product_detail/product_detail_icon_4.png" alt=""
-                         class="ys5"/>
-                </p>
-                <img src="${pageContext.request.contextPath}/images/product_detail/product_detail_img8.png" alt=""/>
-            </div>
-            <div id="sale_protection">
-                <p>
-                    售后保障
-                    <img src="${pageContext.request.contextPath}/images/product_detail/product_detail_icon_3.png" alt=""
-                         class="ys5"/>
-                </p>
-
-                <div class="sale_content">
-                    <p class="paper" id="sale_protect">
-                        <img src="${pageContext.request.contextPath}/images/product_detail/product_detail_img16.png"
-                             alt=""/>
-                        正品保障
-                    </p>
-
-                    <p class="content">
-                        阿甲学子商城向您保证所售商品均为正品行货，阿甲自营商品开具机打发票或电子发票。
-                    </p>
-
-                    <p class="paper">
-                        <img src="${pageContext.request.contextPath}/images/product_detail/product_detail_img16.png"
-                             alt=""/>
-                        全国联保
-                    </p>
-
-                    <p class="content">
-                        凭质保证书及阿甲商城发票，可享受全国联保服务，与您亲临商场选购的商品享受相同的质量保证。阿甲商城还为您提供具有竞争力的商品价格和运费政策，请您放心购买！
-                        注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解！
-                    </p>
-                </div>
-            </div>
-            <div id="packing_list">
-                <p>
-                    包装清单
-                    <img src="${pageContext.request.contextPath}/images/product_detail/product_detail_icon_2.png" alt=""
-                         class="ys5"/>
-                </p>
-
-                <p class="content">笔记本 x1 适配器 x1 电源线 x1 电池 x1 说明书（电子版）x1 备注：笔记本电脑的背面只会标注此电脑的系列，例如： XPS 13-9360 ，
-                    如果您需要核实此电脑的具体配置型号是否与阿甲页面相符，可电话咨询阿甲厂商：800-858-2969</p>
-            </div>
+            ${itemDesc.itemDesc}
         </div>
     </div>
     <div class="right rt">
